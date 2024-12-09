@@ -12,7 +12,6 @@
             <p>{blog.subtitle}</p>
             <p>{blog.autor}</p>
         </div>
-        <p>moin</p>
     </div>
 </div>
 
