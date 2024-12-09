@@ -12,7 +12,7 @@
             <p>{blog.subtitle}</p>
             <p>{blog.autor}</p>
         </div>
-        moin
+        <p>moin</p>
     </div>
 </div>
 
