@@ -12,6 +12,7 @@
             <p>{blog.subtitle}</p>
             <p>{blog.autor}</p>
         </div>
+        moin
     </div>
 </div>
 
