@@ -4,65 +4,57 @@ import { DB_URI } from "$env/static/private";
 const client = new MongoClient(DB_URI);
 
 await client.connect();
-const db = client.db("ScreenStackDB"); // select database
+const db = client.db("MyBlogDB"); // select database
 
 //////////////////////////////////////////
-// Movies
+// Blogs
 //////////////////////////////////////////
 
-// Get all movies
-async function getMovies() {
-  let movies = [];
+// Get all blogs
+async function getBlogs() {
+  let blogs = [];
   try {
-    const collection = db.collection("movies");
+    const collection = db.collection("blogs");
 
     // You can specify a query/filter here
     // See https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/query-document/
     const query = {};
 
     // Get all objects that match the query
-    movies = await collection.find(query).toArray();
-    movies.forEach((movie) => {
-      movie._id = movie._id.toString(); // convert ObjectId to String
+    blogs = await collection.find(query).toArray();
+    blogs.forEach((blog) => {
+      blog._id = blog._id.toString(); // convert ObjectId to String
     });
   } catch (error) {
     console.log(error);
     // TODO: errorhandling
   }
-  return movies;
+  return blogs;
 }
 
-// Get movie by id
-async function getMovie(id) {
-  let movie = null;
+// Get blog by id
+async function getBlog(id) {
+  let blog = null;
   try {
-    const collection = db.collection("movies");
+    const collection = db.collection("blogs");
     const query = { _id: new ObjectId(id) }; // filter by id
-    movie = await collection.findOne(query);
+    blog = await collection.findOne(query);
 
-    if (!movie) {
-      console.log("No movie with id " + id);
+    if (!blog) {
+      console.log("No blog with id " + id);
       // TODO: errorhandling
     } else {
-      movie._id = movie._id.toString(); // convert ObjectId to String
+      blog._id = blog._id.toString(); // convert ObjectId to String
     }
   } catch (error) {
     // TODO: errorhandling
     console.log(error.message);
   }
-  return movie;
+  return blog;
 }
 
-// create movie
-// Example movie object:
-/* 
-{ 
-  title: "Das Geheimnis von Altura",
-  year: 2024,
-  length: "120 Minuten"
-} 
-*/
-async function createMovie(movie) {
+// create blog
+async function createBlog(blog) {
   movie.poster = "/images/placeholder.jpg"; // default poster
   movie.actors = [];
   movie.watchlist = false;
@@ -140,9 +132,9 @@ async function deleteMovie(id) {
 
 // export all functions so that they can be used in other files
 export default {
-  getMovies,
-  getMovie,
-  createMovie,
+  getBlogs,
+  getBlog,
+  createBlog,
   updateMovie,
   deleteMovie,
 };

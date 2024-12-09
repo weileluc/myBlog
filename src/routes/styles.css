@@ -88,3 +88,20 @@ body {
 .blog-text {
     padding: 10px;
 }
+
+/* --------------- BLOGS ----------------------------------------------------------------------------------- */
+
+.blog-content {
+    margin-left:  100px;
+    margin-right: 100px;
+}
+
+.blog-header {
+    font-weight: bold;
+}
+
+.blog-image {
+    width: 300px;
+    height: 100%;
+    object-fit: cover; /* Zuschneiden des Bildes */
+}

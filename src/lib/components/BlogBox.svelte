@@ -1,10 +1,10 @@
 <script>
-    let {blog} = $props();
+    let { blog } = $props();
 </script>
 
 <div class="blog-box">
     <div class="row">
-        <div class="col-lg-5 blog-image">
+        <div class="col-lg-5 blogs-image">
             <img src={blog.titleImage} alt="" class="title-image"/>
         </div>
         <div class="col-lg-7 blog-text">
