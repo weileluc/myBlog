@@ -23,7 +23,10 @@
         <h1>{blog.title}</h1>
     </div>
     <div class="row">
-        <p>{blog.content}</p>
+        <b>{blog.subtitle}</b>
+    </div>
+    <div class="row blog-content">
+        <p>{@html blog.content}</p>
     </div>
     <div class="row">
         {#each blog.images as image}
