@@ -32,7 +32,7 @@
         >
             <ul class="navbar-nav">
                 <li>
-                    <a class="nav-link active" href="/">HOME</a>
+                    <a class="nav-link active" href="/">HOM</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a
@@ -92,7 +92,7 @@
                     <a class="nav-link active" href="/">HOME</a>
                     <a class="nav-link active" href="/blogs">BLOG</a>
                     <a class="nav-link active" href="/laender">LÄNDER</a>
-                    <a class="nav-link active" href="/about">ÜBER MIC</a>
+                    <a class="nav-link active" href="/about">ÜBER MICH</a>
                 </nav>
             </div>
             <div class="col-md-4">
