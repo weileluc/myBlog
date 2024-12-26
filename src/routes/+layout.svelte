@@ -92,7 +92,7 @@
                     <a class="nav-link active" href="/">HOME</a>
                     <a class="nav-link active" href="/blogs">BLOG</a>
                     <a class="nav-link active" href="/laender">LÄNDER</a>
-                    <a class="nav-link active" href="/about">ÜBER MICH</a>
+                    <a class="nav-link active" href="/about">ÜBER MIC</a>
                 </nav>
             </div>
             <div class="col-md-4">
