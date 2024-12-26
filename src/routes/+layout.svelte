@@ -32,7 +32,7 @@
         >
             <ul class="navbar-nav">
                 <li>
-                    <a class="nav-link active" href="/">HOM</a>
+                    <a class="nav-link active" href="/">HOME</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a
@@ -45,7 +45,8 @@
                     <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item" href="/blogs"
-                                >Alle Beiträge</a>
+                                >Alle Beiträge</a
+                            >
                         </li>
                         <li>
                             <a class="dropdown-item" href="/">Reise 2021</a>
@@ -97,7 +98,10 @@
             </div>
             <div class="col-md-4">
                 <p>&copy; 2021 Luca Weilenmann</p>
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="/admin">ADMIN</a>
+                </nav>
             </div>
-        </div>        
+        </div>
     </div>
 </footer>
