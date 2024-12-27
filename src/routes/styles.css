@@ -81,11 +81,13 @@ body {
     border: 1px solid black;
     background-color: rgb(225, 235, 217);
     padding-right: 10px;
+    border-radius: 5px;
 }
 
 .title-image {
     width: 100%;
     height: 300px;
+    border-radius: 5px 0px 0px 5px;
     object-fit: cover; /* Zuschneiden des Bildes */
 }
 

@@ -13,7 +13,7 @@
                 height="30"
                 class="d-inline-block align-text-top -2"
             />
-            MyBlog Luca Weilenmann</a
+            myBlog</a
         >
         <button
             class="navbar-toggler"
