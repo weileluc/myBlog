@@ -4,7 +4,14 @@
     let { data } = $props();
 </script>
 
-<h1>Blog</h1>
+<div class="row mb-3">
+    <div class="col-sm-10">
+        <h1>Blog</h1>
+    </div>
+    <div class="col-sm-2">
+        <button type="button" class="btn btn-outline-success">Blog hinzufügen</button>
+    </div>
+</div>
 
 {#each data.blogs as blog}
     <BlogBox {blog} />

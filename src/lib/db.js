@@ -53,7 +53,7 @@ async function getBlog(id) {
   return blog;
 }
 
-// create blog
+// create movie
 async function createBlog(blog) {
   movie.poster = "/images/placeholder.jpg"; // default poster
   movie.actors = [];
@@ -109,18 +109,18 @@ async function updateMovie(movie) {
   return null;
 }
 
-// delete movie by id
-// returns: id of the deleted movie or null, if movie could not be deleted
-async function deleteMovie(id) {
+// delete blog by id
+// returns: id of the deleted blog or null, if blog could not be deleted
+async function deleteBlog(id) {
   try {
-    const collection = db.collection("movies");
+    const collection = db.collection("blogs");
     const query = { _id: new ObjectId(id) }; // filter by id
     const result = await collection.deleteOne(query);
 
     if (result.deletedCount === 0) {
-      console.log("No movie with id " + id);
+      console.log("No blog with id " + id);
     } else {
-      console.log("Movie with id " + id + " has been successfully deleted.");
+      console.log("Blog with id " + id + " has been successfully deleted.");
       return id;
     }
   } catch (error) {
@@ -136,5 +136,5 @@ export default {
   getBlog,
   createBlog,
   updateMovie,
-  deleteMovie,
+  deleteBlog,
 };

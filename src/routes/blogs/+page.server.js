@@ -6,3 +6,10 @@ export async function load() {
         blogs: await db.getBlogs()
     }
 }
+
+export const actions = {
+    delete: async ({request}) => {
+        const data = await request.formData();
+        await db.deleteBlog(data.get("id"));
+    }
+}

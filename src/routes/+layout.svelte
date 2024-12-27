@@ -76,8 +76,10 @@
 <img src="/images/layoutMain.jpg" alt="" class="background-image" />
 
 <div class="main-title">
-    <p style="font-size: 67px; margin-bottom: 0">Luca Weilenmann</p>
-    <p style="font-size: 25px">looking for adventure</p>
+    <a class="link-dark link-underline-opacity-0" href="/">
+        <p style="color: rgb(202, 250, 215); font-size: 67px; margin-bottom: 0">Luca Weilenmann</p>
+        <p style="color: rgb(202, 250, 215); font-size: 25px">looking for adventure</p>
+    </a>
 </div>
 
 <div class="container">
