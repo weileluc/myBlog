@@ -53,14 +53,15 @@ async function getBlog(id) {
   return blog;
 }
 
-// create movie
+// create blog
 async function createBlog(blog) {
-  movie.poster = "/images/placeholder.jpg"; // default poster
-  movie.actors = [];
-  movie.watchlist = false;
+  blog.titleImage = "/images/w1/default.jpg"; // default poster
+  blog.categoryCountry = [];
+  blog.categoryType = [];
+  blog.images = ["/images/w1/default.jpg", "/images/w1/default.jpg"];
   try {
-    const collection = db.collection("movies");
-    const result = await collection.insertOne(movie);
+    const collection = db.collection("blogs");
+    const result = await collection.insertOne(blog);
     return result.insertedId.toString(); // convert ObjectId to String
   } catch (error) {
     // TODO: errorhandling
@@ -87,7 +88,7 @@ async function createBlog(blog) {
 } 
 */
 // returns: id of the updated movie or null, if movie could not be updated
-async function updateMovie(movie) {
+async function updateBlog(blog) {
   try {
     let id = movie._id;
     delete movie._id; // delete the _id from the object, because the _id cannot be updated
@@ -135,6 +136,6 @@ export default {
   getBlogs,
   getBlog,
   createBlog,
-  updateMovie,
+  updateBlog,
   deleteBlog,
 };

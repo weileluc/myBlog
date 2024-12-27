@@ -9,7 +9,7 @@
         <h1>Blog</h1>
     </div>
     <div class="col-sm-2">
-        <button type="button" class="btn btn-outline-success">Blog hinzufügen</button>
+        <a class="btn btn-outline-success" href="/blogs/create" role="button">Blog hinzufügen</a>
     </div>
 </div>
 
