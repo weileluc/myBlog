@@ -110,3 +110,14 @@ body {
     height: 100%;
     object-fit: cover; /* Zuschneiden des Bildes */
 }
+
+/* --------------- NEUER BLOG HINZUFUEGEN ----------------------------------------------------------------------------------- */
+
+.form-control {
+    background-color: rgb(225, 235, 217);
+    border-color: rgb(151, 151, 151);
+}
+
+.form-control:hover {
+    background-color: rgb(204, 215, 194); /* Light gray background on hover */
+}

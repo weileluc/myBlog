@@ -10,18 +10,28 @@ export const actions = {
     create: async ({ request }) => {
         const data = await request.formData();
 
-        // Blog-Datum aus den Formulardaten abrufen
+        // Blog-Datum und Titelbild abrufen
         const blogDate = data.get("date");
         const titleImageFile = data.get("titleImage");
 
-        // Speicherpfad für die hochgeladene Datei
+        // Speicherpfad für den Blog Ordner
         const dir = path.join(process.cwd(), "static/images", `blog.${blogDate}`);
         await mkdir(dir, { recursive: true }); // Verzeichnis erstellen, falls nicht vorhanden
 
-        // Datei speichern
+        // Titelbild speichern
         const titleImagePath = path.join(dir, titleImageFile.name);
         const titleImageRelativePath = `/images/blog.${blogDate}/${titleImageFile.name}`;
         await writeFile(titleImagePath, Buffer.from(await titleImageFile.arrayBuffer()));
+
+        // Zusätzliche Bilder speichern
+        const images = data.getAll("images");
+        const imagesPaths = [];
+        for (const image of images) {
+            const imagePath = path.join(dir, image.name);
+            const imageRelativePath = `/images/blog.${blogDate}/${image.name}`;
+            await writeFile(imagePath, Buffer.from(await image.arrayBuffer()));
+            imagesPaths.push(imageRelativePath);
+        }
 
         // Inhalt in Absätze aufteilen
         const content = data.get("content");
@@ -43,7 +53,7 @@ export const actions = {
             categoryCountry: data.getAll("categoryCountry"),
             categoryType: data.getAll("categoryType"),
             content: htmlContent,
-            images: data.getAll("images"),
+            images: imagesPaths,
         }
         await db.createBlog(blog);
     }

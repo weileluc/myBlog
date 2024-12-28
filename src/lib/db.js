@@ -58,7 +58,7 @@ async function createBlog(blog) {
   //blog.titleImage = "/images/w1/default.jpg"; // default poster
   blog.categoryCountry = [];
   blog.categoryType = [];
-  blog.images = ["/images/w1/default.jpg", "/images/w1/default.jpg"];
+  //blog.images = ["/images/w1/default.jpg", "/images/w1/default.jpg"]; // default images
   try {
     const collection = db.collection("blogs");
     const result = await collection.insertOne(blog);

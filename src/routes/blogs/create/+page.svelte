@@ -24,7 +24,7 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Untertitel</label>
-        <input type="text" class="form-control" name="subtitle" />
+        <textarea class="form-control" rows="4" name="subtitle"></textarea>
     </div>
     <div class="row">
         <div class="col-sm-4 mb-3">
@@ -48,10 +48,15 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Blog</label>
-        <textarea class="form-control" rows="10" name="content"></textarea>
+        <textarea class="form-control" rows="15" name="content"></textarea>
     </div>
     <div class="mb-3">
-        <i>images hinzufügen</i>
+        <label for="images" class="form-label">Bilder</label>
+        <input type="file" class="form-control" name="images" accept="image/*" multiple />
+        <small class="form-text text-muted">Du kannst mehrere Bilder auswählen.</small>
     </div>
-    <button type="submit" class="btn btn-primary">Hinzufügen</button>
+    <div class="mt-5">
+        <a class="btn btn-outline-danger" href="/blogs" role="button">Abbrechen</a>
+        <button type="submit" class="btn btn-outline-success">Blog Hinzufügen</button>
+    </div>
 </form>
