@@ -99,7 +99,7 @@
                 </nav>
             </div>
             <div class="col-md-4">
-                <p>&copy; 2021 Luca Weilenmann</p>
+                <p>&copy; 2024 Luca Weilenmann</p>
                 <nav class="nav flex-column">
                     <a class="nav-link active" href="/admin">ADMIN</a>
                 </nav>

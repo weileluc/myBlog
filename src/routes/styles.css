@@ -86,13 +86,17 @@ body {
 
 .title-image {
     width: 100%;
-    height: 320px;
+    height: 350px;
     border-radius: 5px 0px 0px 5px;
     object-fit: cover; /* Zuschneiden des Bildes */
 }
 
-.blogs-text {
+.blogs-right-box {
     padding: 10px;
+}
+
+.blogs-text-box {
+    height: 290px;
 }
 
 /* --------------- BLOG ----------------------------------------------------------------------------------- */

@@ -8,11 +8,15 @@
             <div class="col-lg-5 blogs-image">
                 <img src={blog.titleImage} alt="" class="title-image" />
             </div>
-            <div class="col-lg-7 blogs-text">
-                <h2>{blog.title}</h2>
-                <p>{blog.subtitle}</p>
-                <p><b>Autor:</b> {blog.autor}</p>
-                <div class="row blogs-buttons">
+            <div class="col-lg-7 blogs-right-box">
+                <div class="blogs-text-box">
+                    <h2>{blog.title}</h2>
+                    <p>{blog.subtitle}</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <p><b>Autor:</b> {blog.autor}</p>
+                    </div>
                     <div class="col-auto">
                         <form method="POST" action="?/delete">
                             <input type="hidden" name="id" value={blog._id} />
