@@ -3,7 +3,7 @@
     let blog = data.blog;
 </script>
 
-<div class="blog-content">
+<div class="blog-content-container">
     <div class="row blog-header">
         <div class="col-auto">
             <a class="icon-link" href="/blogs" aria-label="Go back to blogs">

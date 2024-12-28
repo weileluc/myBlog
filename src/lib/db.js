@@ -55,7 +55,7 @@ async function getBlog(id) {
 
 // create blog
 async function createBlog(blog) {
-  blog.titleImage = "/images/w1/default.jpg"; // default poster
+  //blog.titleImage = "/images/w1/default.jpg"; // default poster
   blog.categoryCountry = [];
   blog.categoryType = [];
   blog.images = ["/images/w1/default.jpg", "/images/w1/default.jpg"];

@@ -4,9 +4,13 @@
 
 <h1>Neuer Blog hinzufügen</h1>
 
-<form method="POST" action="?/create">
+<form method="POST" action="?/create" enctype="multipart/form-data"> 
+    <!--Dieses Formular ermöglicht das Hochladen 
+    von Dateien und das Senden von Formulardaten an den Server.
+    Die Verwendung von enctype="multipart/form-data" ist notwendig-->
     <div class="mb-3">
-        <i>titleImage import</i>
+        <label for="titleImage" class="form-label">Titelbild hochladen</label>
+        <input type="file" class="form-control" id="titleImage" name="titleImage" accept="image/*"/>
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Titel</label>
@@ -21,7 +25,7 @@
         <input type="text" class="form-control" name="autor" />
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Datum</label>
+        <label for="date" class="form-label">Datum</label>
         <input type="date" class="form-control" name="date" />
     </div>
     <div class="mb-3">
