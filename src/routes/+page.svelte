@@ -1,103 +1,49 @@
 <script>
+    import BlogBox from "$lib/components/BlogBox.svelte";
+
+    let { data } = $props();
 </script>
 
 <h1>Willkommen in meinem Blog</h1>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus,
-    justo sit amet accumsan congue, mauris turpis gravida elit, at vehicula est
-    arcu id lectus. Suspendisse potenti. Ut porttitor tellus nec ligula dictum
-    efficitur. Integer dictum consectetur lacus non interdum. Etiam in ligula eu
-    est laoreet pharetra. Nam at nisi at justo iaculis malesuada. Phasellus
-    sollicitudin nisl eget purus vehicula, at dapibus risus suscipit. Duis
-    volutpat eros ut dolor laoreet, vel porttitor tortor pellentesque. Aliquam
-    erat volutpat. Nulla facilisi. Praesent sodales, velit nec fermentum
-    pharetra, ex lorem elementum nisl, eu viverra ligula metus ac nunc.
-    Pellentesque tristique feugiat nulla nec viverra. Nullam quis mauris sit
-    amet nunc fermentum luctus. Aenean dictum mi in fermentum hendrerit. Proin
-    vehicula nibh vel tincidunt mollis. Donec feugiat, felis et feugiat gravida,
-    magna odio elementum augue, eget bibendum mi turpis in sapien. Nulla
-    facilisi. Mauris vehicula metus sed fermentum varius. Vestibulum luctus
-    purus non elit dignissim, nec accumsan nisi iaculis. Aenean dictum urna sed
-    tellus fringilla, non gravida libero bibendum. Quisque vel dui eget sapien
-    varius pretium. Vivamus auctor odio non sem suscipit, vitae ullamcorper enim
-    tincidunt. Phasellus consequat, enim ac sodales aliquet, justo magna
-    vehicula mauris, ac porttitor nunc ex quis libero. Pellentesque habitant
-    morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc
-    tincidunt dui eget lorem euismod, nec ultricies purus bibendum. Nullam et
-    urna ultricies, tincidunt mi non, fringilla lacus. Fusce vel libero ut metus
-    egestas convallis in at urna. Maecenas id congue libero. Donec et ligula
-    quis nisi aliquet varius. Sed fermentum orci et felis scelerisque tincidunt.
-    Suspendisse dignissim nisi eu risus fringilla tristique. Nullam euismod,
-    nunc non venenatis gravida, nisi magna elementum eros, sit amet dapibus odio
-    odio id libero. Duis tristique lacinia dictum. Integer eget pharetra lacus.
-    In rhoncus quam id dui posuere fringilla. Vivamus a bibendum ligula. Nam ac
-    convallis ex, non molestie ligula. Ut et orci vel lectus pretium luctus. Sed
-    sit amet tellus et felis tincidunt volutpat.
-</p>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus,
-    justo sit amet accumsan congue, mauris turpis gravida elit, at vehicula est
-    arcu id lectus. Suspendisse potenti. Ut porttitor tellus nec ligula dictum
-    efficitur. Integer dictum consectetur lacus non interdum. Etiam in ligula eu
-    est laoreet pharetra. Nam at nisi at justo iaculis malesuada. Phasellus
-    sollicitudin nisl eget purus vehicula, at dapibus risus suscipit. Duis
-    volutpat eros ut dolor laoreet, vel porttitor tortor pellentesque. Aliquam
-    erat volutpat. Nulla facilisi. Praesent sodales, velit nec fermentum
-    pharetra, ex lorem elementum nisl, eu viverra ligula metus ac nunc.
-    Pellentesque tristique feugiat nulla nec viverra. Nullam quis mauris sit
-    amet nunc fermentum luctus. Aenean dictum mi in fermentum hendrerit. Proin
-    vehicula nibh vel tincidunt mollis. Donec feugiat, felis et feugiat gravida,
-    magna odio elementum augue, eget bibendum mi turpis in sapien. Nulla
-    facilisi. Mauris vehicula metus sed fermentum varius. Vestibulum luctus
-    purus non elit dignissim, nec accumsan nisi iaculis. Aenean dictum urna sed
-    tellus fringilla, non gravida libero bibendum. Quisque vel dui eget sapien
-    varius pretium. Vivamus auctor odio non sem suscipit, vitae ullamcorper enim
-    tincidunt. Phasellus consequat, enim ac sodales aliquet, justo magna
-    vehicula mauris, ac porttitor nunc ex quis libero. Pellentesque habitant
-    morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc
-    tincidunt dui eget lorem euismod, nec ultricies purus bibendum. Nullam et
-    urna ultricies, tincidunt mi non, fringilla lacus. Fusce vel libero ut metus
-    egestas convallis in at urna. Maecenas id congue libero. Donec et ligula
-    quis nisi aliquet varius. Sed fermentum orci et felis scelerisque tincidunt.
-    Suspendisse dignissim nisi eu risus fringilla tristique. Nullam euismod,
-    nunc non venenatis gravida, nisi magna elementum eros, sit amet dapibus odio
-    odio id libero. Duis tristique lacinia dictum. Integer eget pharetra lacus.
-    In rhoncus quam id dui posuere fringilla. Vivamus a bibendum ligula. Nam ac
-    convallis ex, non molestie ligula. Ut et orci vel lectus pretium luctus. Sed
-    sit amet tellus et felis tincidunt volutpat.
-</p>
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus,
-    justo sit amet accumsan congue, mauris turpis gravida elit, at vehicula est
-    arcu id lectus. Suspendisse potenti. Ut porttitor tellus nec ligula dictum
-    efficitur. Integer dictum consectetur lacus non interdum. Etiam in ligula eu
-    est laoreet pharetra. Nam at nisi at justo iaculis malesuada. Phasellus
-    sollicitudin nisl eget purus vehicula, at dapibus risus suscipit. Duis
-    volutpat eros ut dolor laoreet, vel porttitor tortor pellentesque. Aliquam
-    erat volutpat. Nulla facilisi. Praesent sodales, velit nec fermentum
-    pharetra, ex lorem elementum nisl, eu viverra ligula metus ac nunc.
-    Pellentesque tristique feugiat nulla nec viverra. Nullam quis mauris sit
-    amet nunc fermentum luctus. Aenean dictum mi in fermentum hendrerit. Proin
-    vehicula nibh vel tincidunt mollis. Donec feugiat, felis et feugiat gravida,
-    magna odio elementum augue, eget bibendum mi turpis in sapien. Nulla
-    facilisi. Mauris vehicula metus sed fermentum varius. Vestibulum luctus
-    purus non elit dignissim, nec accumsan nisi iaculis. Aenean dictum urna sed
-    tellus fringilla, non gravida libero bibendum. Quisque vel dui eget sapien
-    varius pretium. Vivamus auctor odio non sem suscipit, vitae ullamcorper enim
-    tincidunt. Phasellus consequat, enim ac sodales aliquet, justo magna
-    vehicula mauris, ac porttitor nunc ex quis libero. Pellentesque habitant
-    morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc
-    tincidunt dui eget lorem euismod, nec ultricies purus bibendum. Nullam et
-    urna ultricies, tincidunt mi non, fringilla lacus. Fusce vel libero ut metus
-    egestas convallis in at urna. Maecenas id congue libero. Donec et ligula
-    quis nisi aliquet varius. Sed fermentum orci et felis scelerisque tincidunt.
-    Suspendisse dignissim nisi eu risus fringilla tristique. Nullam euismod,
-    nunc non venenatis gravida, nisi magna elementum eros, sit amet dapibus odio
-    odio id libero. Duis tristique lacinia dictum. Integer eget pharetra lacus.
-    In rhoncus quam id dui posuere fringilla. Vivamus a bibendum ligula. Nam ac
-    convallis ex, non molestie ligula. Ut et orci vel lectus pretium luctus. Sed
-    sit amet tellus et felis tincidunt volutpat.
-</p>
+
+
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        
+            <div class="carousel-item active" style="height: 320px;">
+                <img src={data.blogs[0].titleImage} class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{data.blogs[0].title}</h5>
+                </div>
+            </div>
+            <div class="carousel-item" style="height: 320px;">
+                <img src={data.blogs[1].titleImage} class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{data.blogs[1].title}</h5>
+                </div>
+            </div>
+            <div class="carousel-item" style="height: 320px;">
+                <img src={data.blogs[2].titleImage} class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{data.blogs[2].title}</h5>
+                </div>
+            </div>
+       
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
 <style>
 </style>
