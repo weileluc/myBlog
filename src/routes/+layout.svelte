@@ -66,6 +66,9 @@
                     <a class="nav-link active" href="/laender">LÄNDER</a>
                 </li>
                 <li>
+                    <a class="nav-link active" href="/reisearten">REISEARTEN</a>
+                </li>
+                <li>
                     <a class="nav-link active" href="/about">ÜBER MICH</a>
                 </li>
             </ul>
@@ -95,6 +98,7 @@
                     <a class="nav-link active" href="/">HOME</a>
                     <a class="nav-link active" href="/blogs">BLOG</a>
                     <a class="nav-link active" href="/laender">LÄNDER</a>
+                    <a class="nav-link active" href="/reisearten">REISEARTEN</a>
                     <a class="nav-link active" href="/about">ÜBER MICH</a>
                 </nav>
             </div>
