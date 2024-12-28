@@ -12,19 +12,26 @@ export const actions = {
             .map((paragraph) => `<p>${paragraph.trim()}</p>`); // In <p> Tags einfügen
         const htmlContent = paragraphs.join(""); // Absätze zusammenfügen
         
-        // Bilderpfad ergänzen
+        // Datum verarbeiten
+        const date = data.get("date"); // Erwartet ein Datum im Format YYYY-MM-DD
+        const formattedDate = date.replace(/-/g, ""); // Entfernt Bindestriche, z. B. 20241228
+
+        // Bilderpfad ergänzen mit Datum
         const images = data.getAll("images").map((image) => {
-            if (!image.startsWith("/images/")) {
-                return `/images/${image}`;
+            if (!image.startsWith(`/images/${formattedDate}/`)) {
+                return `/images/${formattedDate}/${image}`;
             }
             return image;
         });
 
+        // Titelbildpfad ergänzen mit Datum
+        const titleImage = data.get("titleImage").startsWith(`/images/${formattedDate}/`)
+            ? data.get("titleImage")
+            : `/images/${formattedDate}/${data.get("titleImage")}`;
+
         let blog = {
             _id: data.get("_id"),
-            titleImage: data.get("titleImage").startsWith("/images/") // Bilderpfad ergänzen
-            ? data.get("titleImage")
-            : `/images/${data.get("titleImage")}`,
+            titleImage: titleImage,
             title: data.get("title"),
             subtitle: data.get("subtitle"),
             autor: data.get("autor"),
