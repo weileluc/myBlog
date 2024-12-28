@@ -15,7 +15,7 @@ export const actions = {
         const titleImageFile = data.get("titleImage");
 
         // Speicherpfad für den Blog Ordner
-        const dir = path.join(process.cwd(), "static/images", `blog.${blogDate}`);
+        const dir = path.join(process.cwd(), "lib/images", `blog.${blogDate}`);
         await mkdir(dir, { recursive: true }); // Verzeichnis erstellen, falls nicht vorhanden
 
         // Titelbild speichern
@@ -58,4 +58,6 @@ export const actions = {
         await db.createBlog(blog);
     }
 }
+
+   
 

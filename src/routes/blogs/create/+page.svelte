@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="mb-3">
-        <i>categoryContry hinzufügen</i>
+        <i>categoryCountry hinzufügen</i>
     </div>
     <div class="mb-3">
         <i>categoryType hinzufügen</i>
@@ -52,11 +52,23 @@
     </div>
     <div class="mb-3">
         <label for="images" class="form-label">Bilder</label>
-        <input type="file" class="form-control" name="images" accept="image/*" multiple />
-        <small class="form-text text-muted">Du kannst mehrere Bilder auswählen.</small>
+        <input
+            type="file"
+            class="form-control"
+            name="images"
+            accept="image/*"
+            multiple
+        />
+        <small class="form-text text-muted"
+            >Du kannst mehrere Bilder auswählen.</small
+        >
     </div>
     <div class="mt-5">
-        <a class="btn btn-outline-danger" href="/blogs" role="button">Abbrechen</a>
-        <button type="submit" class="btn btn-outline-success">Blog Hinzufügen</button>
+        <a class="btn btn-outline-danger" href="/blogs" role="button"
+            >Abbrechen</a
+        >
+        <button type="submit" class="btn btn-outline-success"
+            >Blog Hinzufügen</button
+        >
     </div>
 </form>
