@@ -4,10 +4,7 @@
 
 <h1>Neuer Blog hinzufügen</h1>
 
-<form method="POST" action="?/create" enctype="multipart/form-data">
-    <!--Dieses Formular ermöglicht das Hochladen 
-    von Dateien und das Senden von Formulardaten an den Server.
-    Die Verwendung von enctype="multipart/form-data" ist notwendig-->
+<form method="POST" action="?/create">
     <div class="mb-3">
         <label for="titleImage" class="form-label">Titelbild hochladen</label>
         <input
