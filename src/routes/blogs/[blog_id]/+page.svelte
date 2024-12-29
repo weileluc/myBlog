@@ -1,6 +1,7 @@
 <script>
     let { data } = $props();
     let blog = data.blog;
+    let laender = data.countries;
 </script>
 
 <div class="blog-content-container">
@@ -39,8 +40,9 @@
         {/each}
     </div>
     <div class="row">
-        {#each blog.categoryCountry as country}
-            <p>{country}</p>
+        <h3>Länder:</h3>
+        {#each laender as land}
+            <p>{land.country} (Hauptstadt: {land.capital})</p>
         {/each}
     </div>
 </div>

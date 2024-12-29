@@ -158,6 +158,28 @@ async function getLaender() {
   return laender;
 }
 
+// Laender mit der ID abrufen
+async function getLaenderByIdCountry(ids) {
+  let countries = [];
+  try {
+    const collection = db.collection("laender");
+
+    // Convert IDs to numbers if idCountry is stored as integers
+    const queryIds = ids.map((id) => parseInt(id, 10)); // Ensure correct type
+    const query = { idCountry: { $in: queryIds } }; // Match any idCountry in the array
+
+    countries = await collection.find(query).toArray();
+    countries = countries.map((country) => ({
+      ...country,
+      _id: country._id.toString() // Convert _id to string
+    }));
+  } catch (error) {
+    console.log(error);
+    // TODO: errorhandling
+  }
+  return countries;
+}
+
 
 // export all functions so that they can be used in other files
 export default {
@@ -167,4 +189,5 @@ export default {
   updateBlog,
   deleteBlog,
   getLaender,
+  getLaenderByIdCountry,
 };
