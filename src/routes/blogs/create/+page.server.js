@@ -11,7 +11,7 @@ export const actions = {
             .filter((paragraph) => paragraph.trim() !== "") // Entfernt leere Absätze
             .map((paragraph) => `<p>${paragraph.trim()}</p>`); // In <p> Tags einfügen
         const htmlContent = paragraphs.join(""); // Absätze zusammenfügen
-        
+
         // Datum verarbeiten
         const date = data.get("date"); // Erwartet ein Datum im Format YYYY-MM-DD
         const formattedDate = date.replace(/-/g, ""); // Entfernt Bindestriche, z. B. 20241228
@@ -29,6 +29,10 @@ export const actions = {
             ? data.get("titleImage")
             : `/images/${formattedDate}/${data.get("titleImage")}`;
 
+
+        // Kategorie-Länder als Integer-Array
+        const categoryCountry = data.getAll("categoryCountry").map((id) => parseInt(id, 10));
+
         let blog = {
             _id: data.get("_id"),
             titleImage: titleImage,
@@ -37,7 +41,7 @@ export const actions = {
             autor: data.get("autor"),
             date: data.get("date"),
             minutes: data.get("minutes"),
-            categoryCountry: data.getAll("categoryCountry"),
+            categoryCountry: categoryCountry,
             categoryType: data.getAll("categoryType"),
             content: htmlContent,
             images: images,
@@ -46,5 +50,11 @@ export const actions = {
     }
 }
 
-   
+export async function load() {
+
+    return {
+        laender: await db.getLaender()
+    }
+}
+
 

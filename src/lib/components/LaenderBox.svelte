@@ -1,5 +1,13 @@
 <script>
-    let { land } = $props();
+    let { land, blogs } = $props();
+
+    // Function to count blogs that reference the current country's id
+    function countBlogsByCountry(countryId) {
+        return blogs.filter((blog) => blog.categoryCountry.includes(countryId)).length;
+    }
+
+    // Number of blogs for the current country
+    let blogCount = countBlogsByCountry(land.idCountry);
 </script>
 
 <div class="col">
@@ -21,10 +29,13 @@
         </div>
         <div class="card-footer">
             <a class="link-dark link-underline-opacity-0" href="/blogs">
-                <small class="text-body-secondary">... Blogs in {land.country} gefunden</small>
+                <small class="text-body-secondary"
+                    >{blogCount} Blogs in {land.country} gefunden</small
+                >
             </a>
             <a class="icon-link" href="/blogs" aria-label="Go to blogs">
-            <i class="bi bi-arrow-right"></i>
+                <i class="bi bi-arrow-right"></i>
+            </a>
         </div>
     </div>
 </div>

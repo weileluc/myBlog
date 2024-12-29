@@ -1,5 +1,7 @@
 <script>
     let { data } = $props();
+
+    let laender = data.laender;
 </script>
 
 <h1>Neuer Blog hinzufügen</h1>
@@ -38,7 +40,22 @@
         </div>
     </div>
     <div class="mb-3">
-        <i>categoryCountry hinzufügen</i>
+        <label for="" class="form-label">Länder auswählen:</label>
+        <div class="form-check">
+            {#each laender as land}
+                <div>
+                    <input
+                        type="checkbox"
+                        class="form-check-input"
+                        name="categoryCountry"
+                        value={land.idCountry}
+                    />
+                    <label class="form-check-label" for={land.idCountry}>
+                        {land.country}
+                    </label>
+                </div>
+            {/each}
+        </div>
     </div>
     <div class="mb-3">
         <i>categoryType hinzufügen</i>

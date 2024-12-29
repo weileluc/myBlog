@@ -19,6 +19,6 @@
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
   {#each data.laender as land}
-    <LaenderBox {land} />
+    <LaenderBox {land} blogs={data.blogs}/>
   {/each}
 </div>
