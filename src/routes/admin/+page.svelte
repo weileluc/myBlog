@@ -7,5 +7,5 @@
     <div class="mb-3">
       <input type="password" class="form-control" placeholder="Passwort">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-outline-primary">Anmelden</button>
   </form>

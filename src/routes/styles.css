@@ -78,7 +78,7 @@ body {
 
 .blogs-box {
     margin-bottom: 20px;
-    border: 1px solid black;
+    border: 1px solid rgb(151, 151, 151);
     background-color: rgb(225, 235, 217);
     padding-right: 10px;
     border-radius: 5px;
@@ -124,4 +124,20 @@ body {
 
 .form-control:hover {
     background-color: rgb(204, 215, 194); /* Light gray background on hover */
+}
+
+
+/* --------------- COUNTRIES ----------------------------------------------------------------------------------- */
+
+.countries-card-text {
+    margin-left: 15px;
+}
+
+.card:hover {
+    background-color: rgb(204, 215, 194); /* Light gray background on hover */
+}
+
+.card {
+    border: 1px solid rgb(151, 151, 151);
+    background-color: rgb(225, 235, 217);
 }

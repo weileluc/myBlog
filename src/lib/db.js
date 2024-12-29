@@ -131,6 +131,34 @@ async function deleteBlog(id) {
   return null;
 }
 
+
+//////////////////////////////////////////
+// Laender
+//////////////////////////////////////////
+
+// Get all Laender
+async function getLaender() {
+  let laender = [];
+  try {
+    const collection = db.collection("laender");
+
+    // You can specify a query/filter here
+    // See https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/query-document/
+    const query = {};
+
+    // Get all objects that match the query
+    laender = await collection.find(query).toArray();
+    laender.forEach((land) => {
+      land._id = land._id.toString(); // convert ObjectId to String
+    });
+  } catch (error) {
+    console.log(error);
+    // TODO: errorhandling
+  }
+  return laender;
+}
+
+
 // export all functions so that they can be used in other files
 export default {
   getBlogs,
@@ -138,4 +166,5 @@ export default {
   createBlog,
   updateBlog,
   deleteBlog,
+  getLaender,
 };
