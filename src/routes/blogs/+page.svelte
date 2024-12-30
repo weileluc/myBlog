@@ -18,7 +18,7 @@
 
 <div class="card" style="background-color: white;">
     <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs">
+        <ul class="nav nav-tabs card-header-tabs custom-tabs">
             <li class="nav-item">
                 <a class="nav-link {$page.url.searchParams.get('year') === null ? 'active' : ''}" href="/blogs"
                     >Alle Beiträge</a
