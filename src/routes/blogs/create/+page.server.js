@@ -33,6 +33,9 @@ export const actions = {
         // Kategorie-Länder als Integer-Array
         const categoryCountry = data.getAll("categoryCountry").map((id) => parseInt(id, 10));
 
+        // Kategorie-Reisearten als Integer-Array
+        const categoryType = data.getAll("categoryType").map((id) => parseInt(id, 10));
+
         let blog = {
             _id: data.get("_id"),
             titleImage: titleImage,
@@ -42,7 +45,7 @@ export const actions = {
             date: data.get("date"),
             minutes: data.get("minutes"),
             categoryCountry: categoryCountry,
-            categoryType: data.getAll("categoryType"),
+            categoryType: categoryType,
             content: htmlContent,
             images: images,
         }
@@ -53,7 +56,8 @@ export const actions = {
 export async function load() {
 
     return {
-        laender: await db.getLaender()
+        laender: await db.getLaender(),
+        reisearten: await db.getReisearten()
     }
 }
 

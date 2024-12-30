@@ -6,12 +6,16 @@ export async function load({ params }) {
 
     // Extract country IDs from blog
     const categoryCountryIds = blog.categoryCountry || [];
-
     const countries = await db.getLaenderByIdCountry(categoryCountryIds);
+
+    // Extract Reiseart IDs from blog
+    const categoryTypeIds = blog.categoryType || [];
+    const reisearten = await db.getReiseartenByIdReiseart(categoryTypeIds);
 
     return {
         blog,
-        countries
+        countries,
+        reisearten
     }
 }
 

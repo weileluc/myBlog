@@ -207,6 +207,29 @@ async function getReisearten() {
   return reisearten;
 }
 
+// Reisearten mit der ID abrufen
+async function getReiseartenByIdReiseart(ids) {
+  let reisearten = [];
+  try {
+    const collection = db.collection("reisearten");
+
+    // Convert IDs to numbers if idReiseart is stored as integers
+    const queryIds = ids.map((id) => parseInt(id, 10)); // Ensure correct type
+    const query = { idReiseart: { $in: queryIds } }; // Match any idCountry in the array
+
+    reisearten = await collection.find(query).toArray();
+    reisearten = reisearten.map((reiseart) => ({
+      ...reiseart,                 //Übernimmt alle bestehenden Eigenschaften des aktuellen reiseart-Objekts
+      _id: reiseart._id.toString() // Convert _id to string
+    }));
+  } catch (error) {
+    console.log(error);
+    // TODO: errorhandling
+  }
+  return reisearten;
+}
+
+
 
 // export all functions so that they can be used in other files
 export default {
@@ -218,4 +241,5 @@ export default {
   getLaender,
   getLaenderByIdCountry,
   getReisearten,
+  getReiseartenByIdReiseart,
 };

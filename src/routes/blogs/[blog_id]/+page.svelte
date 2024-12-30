@@ -2,6 +2,7 @@
     let { data } = $props();
     let blog = data.blog;
     let laender = data.countries;
+    let reisearten = data.reisearten;
 </script>
 
 <div class="blog-content-container">
@@ -9,6 +10,7 @@
         <div class="col-auto">
             <a class="icon-link" href="/blogs" aria-label="Go back to blogs">
                 <i class="bi bi-arrow-left" style="font-size: 1.5rem;"></i>
+            </a>
         </div>
         <div class="col-auto">
             <p>Autor: {blog.autor}</p>
@@ -35,15 +37,24 @@
         {/each}
     </div>
     <div class="row">
-        {#each blog.categoryType as type}
-            <p>{type}</p>
-        {/each}
+        <h5>Reisearten Tags</h5>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+            {#each reisearten as reiseart}
+                <button type="button" class="btn btn-outline-secondary"
+                    >{reiseart.reiseart}</button
+                >
+            {/each}
+        </div>
     </div>
     <div class="row">
-        <h3>Länder:</h3>
-        {#each laender as land}
-            <p>{land.country} (Hauptstadt: {land.capital})</p>
-        {/each}
+        <h5>Länder Tags</h5>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+            {#each laender as land}
+            <button type="button" class="btn btn-outline-secondary"
+            >{land.country} (Hauptstadt: {land.capital})</button
+        >
+            {/each}
+        </div>
     </div>
 </div>
 
