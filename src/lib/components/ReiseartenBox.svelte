@@ -28,12 +28,12 @@
             </div>
         </div>
         <div class="card-footer mt-auto">
-            <a class="link-dark link-underline-opacity-0" href="/blogs">
+            <a class="link-dark link-underline-opacity-0" href={`/blogs?reiseart=${reiseart.idReiseart}`}>
                 <small class="text-body-secondary"
                     >{blogCount} Blogs über {reiseart.reiseart} gefunden</small
                 >
             </a>
-            <a class="icon-link" href="/blogs" aria-label="Go to blogs">
+            <a class="icon-link" href={`/blogs?reiseart=${reiseart.idReiseart}`} aria-label="Go to blogs">
                 <i class="bi bi-arrow-right"></i>
             </a>
         </div>

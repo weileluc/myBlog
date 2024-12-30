@@ -1,5 +1,6 @@
 <script>
     import BlogBox from "$lib/components/BlogBox.svelte";
+    import { page } from '$app/stores';
 
     let { data } = $props();
 </script>
@@ -19,15 +20,28 @@
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="true" href="#"
+                <a class="nav-link {$page.url.searchParams.get('year') === null ? 'active' : ''}" href="/blogs"
                     >Alle Beiträge</a
                 >
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">...</a>
+                <a class="nav-link {$page.url.searchParams.get('year') === '2021' ? 'active' : ''}"
+                    href="?year=2021">Reise 2021</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" aria-disabled="true">...</a>
+                <a class="nav-link {$page.url.searchParams.get('year') === '2022' ? 'active' : ''}"
+                    href="?year=2022">Reise 2022</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {$page.url.searchParams.get('year') === '2023' ? 'active' : ''}"
+                href="?year=2023">Reise 2023</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {$page.url.searchParams.get('year') === '2024' ? 'active' : ''}"
+                href="?year=2024">Reise 2024</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/blogs">Eigenes Thema</a>
             </li>
         </ul>
     </div>

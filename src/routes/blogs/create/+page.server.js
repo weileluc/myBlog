@@ -16,6 +16,9 @@ export const actions = {
         const date = data.get("date"); // Erwartet ein Datum im Format YYYY-MM-DD
         const formattedDate = date.replace(/-/g, ""); // Entfernt Bindestriche, z. B. 20241228
 
+        // Jahr aus dem Datum extrahieren
+        const year = date.slice(0, 4); // Extrahiert die ersten vier Zeichen (z. B. "2024")
+
         // Bilderpfad ergänzen mit Datum
         const images = data.getAll("images").map((image) => {
             if (!image.startsWith(`/images/${formattedDate}/`)) {
@@ -43,6 +46,7 @@ export const actions = {
             subtitle: data.get("subtitle"),
             autor: data.get("autor"),
             date: data.get("date"),
+            year: year,
             minutes: data.get("minutes"),
             categoryCountry: categoryCountry,
             categoryType: categoryType,

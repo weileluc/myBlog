@@ -31,9 +31,13 @@
     <div class="row blog-content">
         <p>{@html blog.content}</p>
     </div>
-    <div class="row">
+    <div class="row g-3">
         {#each blog.images as image}
-            <img src={image} alt="" class="blog-image" />
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="position-relative">
+                    <img src={image} alt="" class="img-fluid rounded shadow" />
+                </div>
+            </div>
         {/each}
     </div>
     <div class="row">

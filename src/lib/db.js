@@ -32,6 +32,24 @@ async function getBlogs() {
   return blogs;
 }
 
+// Get all blogs with query
+async function getBlogsByQuery(query) {
+  let blogs = [];
+  try {
+    const collection = db.collection("blogs");
+
+    // Get all objects that match the query
+    blogs = await collection.find(query).toArray();
+    blogs.forEach((blog) => {
+      blog._id = blog._id.toString(); // convert ObjectId to String
+    });
+  } catch (error) {
+    console.log(error);
+    // TODO: errorhandling
+  }
+  return blogs;
+}
+
 // Get blog by id
 async function getBlog(id) {
   let blog = null;
@@ -242,4 +260,5 @@ export default {
   getLaenderByIdCountry,
   getReisearten,
   getReiseartenByIdReiseart,
+  getBlogsByQuery,
 };
