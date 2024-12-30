@@ -90,7 +90,7 @@
 </div>
 
 <footer class="footer">
-    <div class="container footer">
+    <div class="container footer mt-5">
         <div class="row">
             <div class="col-md-8">
                 <h4>Menü</h4>
