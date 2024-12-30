@@ -1,5 +1,13 @@
 <script>
     let { reiseart, blogs } = $props();
+
+     // Funktion um Blogs zu zählen, welche mit dem Tag Reiseart versehen sind
+     function countBlogsByReiseart(reiseartId) {
+        return blogs.filter((blog) => blog.categoryType.includes(reiseartId)).length;
+    }
+
+    // Anzahl von Blogs für die jeweilige Reiseart
+    let blogCount = countBlogsByReiseart(reiseart.idReiseart);
 </script>
 
 <div class="col">
@@ -9,10 +17,10 @@
                 <h5 class="card-title">{reiseart.reiseart}</h5>
             </div>
             <div class="row flex-grow-1">
-                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                <div class="col-2 d-flex justify-content-center align-items-center">
                     <h1>{@html reiseart.icon}</h1>
                 </div>
-                <div class="col-md-10">
+                <div class="col-10">
                     <div>
                         <p class="mb-0">{reiseart.text}</p>
                     </div>
@@ -22,7 +30,7 @@
         <div class="card-footer mt-auto">
             <a class="link-dark link-underline-opacity-0" href="/blogs">
                 <small class="text-body-secondary"
-                    >... Blogs über {reiseart.reiseart} gefunden</small
+                    >{blogCount} Blogs über {reiseart.reiseart} gefunden</small
                 >
             </a>
             <a class="icon-link" href="/blogs" aria-label="Go to blogs">

@@ -1,18 +1,17 @@
 <script>
     let { land, blogs } = $props();
 
-    // Function to count blogs that reference the current country's id
+    // Funktion um Blogs zu zählen, welche mit dem Tag Land versehen sind
     function countBlogsByCountry(countryId) {
         return blogs.filter((blog) => blog.categoryCountry.includes(countryId)).length;
     }
 
-    // Number of blogs for the current country
+    // Anzahl von Blogs für das jeweilige Land
     let blogCount = countBlogsByCountry(land.idCountry);
 </script>
 
 <div class="col">
     <div class="card countries h-100">
-        <!--<img src="/images/20240829/20210907_084805.jpg" class="card-img-top" alt="...">-->
         <div class="card-body">
             <h5 class="card-title">{land.country}</h5>
             <div class="countries-card-text">
