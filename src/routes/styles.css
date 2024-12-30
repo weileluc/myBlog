@@ -34,6 +34,7 @@ body {
     background-color: white;
     margin-top: 150px;
     padding: 20px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 
@@ -78,8 +79,6 @@ body {
     background-color: rgb(225, 235, 217);
     padding-right: 10px;
     border-radius: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
 }
 
 .title-image {
@@ -104,6 +103,7 @@ body {
 .custom-tabs .nav-link {
     border: 1px solid rgb(151, 151, 151);
     margin-right: 10px;
+    margin-bottom: 10px;
     border-radius: 5px;
     padding: 8px 16px; 
     color: rgb(81, 87, 94); 
@@ -120,10 +120,6 @@ body {
     background-color: rgb(204, 215, 194); 
     color: rgb(52, 58, 64); 
     border-color: rgb(73, 80, 87);
-}
-
-.custom-tabs {
-    margin-bottom: 1px; 
 }
 
 /* --------------- BLOG ----------------------------------------------------------------------------------- */
