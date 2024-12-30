@@ -49,16 +49,16 @@
                             >
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/">Reise 2021</a>
+                            <a class="dropdown-item" href="/blogs?year=2021">Reise 2021</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/">Reise 2022</a>
+                            <a class="dropdown-item" href="/blogs?year=2022">Reise 2022</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/">Reise 2023</a>
+                            <a class="dropdown-item" href="/blogs?year=2023">Reise 2023</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="/">Reise 2024</a>
+                            <a class="dropdown-item" href="/blogs?year=2024">Reise 2024</a>
                         </li>
                     </ul>
                 </li>
