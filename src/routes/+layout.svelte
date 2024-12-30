@@ -93,7 +93,6 @@
     <div class="container footer mt-5">
         <div class="row">
             <div class="col-md-8">
-                <h4>Menü</h4>
                 <nav class="nav flex-column">
                     <a class="nav-link active" href="/">HOME</a>
                     <a class="nav-link active" href="/blogs">BLOG</a>

@@ -17,21 +17,21 @@
                 </a>
             </div>
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col">
                     <p><b>Autor:</b> {blog.autor}</p>
                 </div>
-                <div class="col-auto">
+                <div class="col-auto" style="margin-right: 15px;">
                     <form method="POST" action="?/delete">
                         <input type="hidden" name="id" value={blog._id} />
                         <button class="btn btn-outline-danger btn-sm">Löschen</button>
                     </form>
                 </div>
-                <div class="col-auto">
+                <!--<div class="col-auto">
                     <form method="POST" action="?/update">
                         <input type="hidden" name="id" value={blog._id} />
                         <button class="btn btn-outline-success btn-sm">Bearbeiten</button>
                     </form>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>

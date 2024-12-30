@@ -1,4 +1,5 @@
 import db from "$lib/db.js";
+import { redirect } from "@sveltejs/kit";
 
 export const actions = {
     create: async ({ request }) => {
@@ -54,6 +55,8 @@ export const actions = {
             images: images,
         }
         await db.createBlog(blog);
+
+        throw redirect(303, "/blogs");
     }
 }
 
