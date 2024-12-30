@@ -57,7 +57,7 @@ async function getBlog(id) {
 async function createBlog(blog) {
   //blog.titleImage = "/images/w1/default.jpg"; // default poster
   //blog.categoryCountry = [];
-  blog.categoryType = [];
+  //blog.categoryType = [];
   //blog.images = ["/images/w1/default.jpg", "/images/w1/default.jpg"]; // default images
   try {
     const collection = db.collection("blogs");
@@ -170,7 +170,7 @@ async function getLaenderByIdCountry(ids) {
 
     countries = await collection.find(query).toArray();
     countries = countries.map((country) => ({
-      ...country,
+      ...country,                 //Übernimmt alle bestehenden Eigenschaften des aktuellen country-Objekts
       _id: country._id.toString() // Convert _id to string
     }));
   } catch (error) {
@@ -178,6 +178,33 @@ async function getLaenderByIdCountry(ids) {
     // TODO: errorhandling
   }
   return countries;
+}
+
+
+//////////////////////////////////////////
+// Reisearten
+//////////////////////////////////////////
+
+// Get all Reisearten
+async function getReisearten() {
+  let reisearten = [];
+  try {
+    const collection = db.collection("reisearten");
+
+    // You can specify a query/filter here
+    // See https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/query-document/
+    const query = {};
+
+    // Get all objects that match the query
+    reisearten = await collection.find(query).toArray();
+    reisearten.forEach((reiseart) => {
+      reiseart._id = reiseart._id.toString(); // convert ObjectId to String
+    });
+  } catch (error) {
+    console.log(error);
+    // TODO: errorhandling
+  }
+  return reisearten;
 }
 
 
@@ -190,4 +217,5 @@ export default {
   deleteBlog,
   getLaender,
   getLaenderByIdCountry,
+  getReisearten,
 };
