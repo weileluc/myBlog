@@ -46,7 +46,7 @@ body {
 
 @media (max-width: 768px) {
     .layout-title {
-      font-size: 48px; /* Verkleinere die Hauptschrift bei Handygröße */
+      font-size: 36px; /* Verkleinere die Hauptschrift bei Handygröße */
     }
 
     .layout-subtitle {
