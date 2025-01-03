@@ -7,7 +7,8 @@
     let reisearten = data.reisearten;
 
     //Pflichtfelder
-    let date = "";
+    // svelte-ignore non_reactive_update
+        let date = "";
     function isFormValid() {
         return date.trim().length > 0;
     } 

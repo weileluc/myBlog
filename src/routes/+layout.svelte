@@ -101,11 +101,11 @@
                     <a class="nav-link active" href="/about">ÜBER MICH</a>
                 </nav>
             </div>
-            <div class="col-md-4">
-                <p>&copy; 2024 Luca Weilenmann</p>
+            <div class="col-md-4 align-self-end">
                 <nav class="nav flex-column">
                     <a class="nav-link active" href="/admin">ADMIN</a>
                 </nav>
+                <p>&copy; 2024 Luca Weilenmann</p>
             </div>
         </div>
     </div>
