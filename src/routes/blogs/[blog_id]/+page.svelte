@@ -7,10 +7,15 @@
 
 <div class="blog-content-container">
     <div class="row blog-header">
-        <div class="col-auto">
-            <a class="icon-link" href="/blogs" aria-label="Go back to blogs">
+        <div class="col-1">
+            <button
+                class="icon-link btn btn-link"
+                aria-label="Go back to blogs"
+                onclick={() => history.back()}
+                style="background: none; border: none; padding: 0;"
+            >
                 <i class="bi bi-arrow-left" style="font-size: 1.5rem;"></i>
-            </a>
+            </button>
         </div>
         <div class="col-auto">
             <p>Autor: {blog.autor}</p>
@@ -44,9 +49,12 @@
         <h5>Reisearten Tags</h5>
         <div class="d-flex flex-wrap gap-2 mb-3">
             {#each reisearten as reiseart}
-                <button type="button" class="btn btn-outline-secondary"
-                    >{reiseart.reiseart}</button
+                <a
+                    href={`/blogs?reiseart=${reiseart.idReiseart}`}
+                    class="btn btn-outline-secondary"
                 >
+                    {reiseart.reiseart}
+                </a>
             {/each}
         </div>
     </div>
@@ -54,9 +62,12 @@
         <h5>Länder Tags</h5>
         <div class="d-flex flex-wrap gap-2 mb-3">
             {#each laender as land}
-            <button type="button" class="btn btn-outline-secondary"
-            >{land.country} (Hauptstadt: {land.capital})</button
-        >
+                <a
+                    href={`/blogs?country=${land.idCountry}`}
+                    class="btn btn-outline-secondary"
+                >
+                    {land.country} (Hauptstadt: {land.capital})
+                </a>
             {/each}
         </div>
     </div>
