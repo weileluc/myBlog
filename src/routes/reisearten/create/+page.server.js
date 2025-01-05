@@ -8,15 +8,16 @@ export const actions = {
         // Generiere die nächste `idReiseart` basierend auf der letzten Position
         const idReiseart = await db.getNextIdFromReisearten();
 
-        let reiseart = {
+        let newReiseart = {
             _id: data.get("_id"),
             reiseart: data.get("reiseart"),
             idReiseart: idReiseart,
             text: data.get("text"),
             icon: data.get("icon"),
         }
-        await db.createReiseart(reiseart);
+        await db.createReiseart(newReiseart);
 
         throw redirect(303, "/reisearten");
-    }
+    },
 }
+

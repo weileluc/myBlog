@@ -88,46 +88,6 @@ async function createBlog(blog) {
   return null;
 }
 
-// update movie
-// Example movie object:
-/* 
-{ 
-  _id: "6630e72c95e12055f661ff13",
-  title: "Das Geheimnis von Altura",
-  year: 2024,
-  length: "120 Minuten",
-  actors: [
-    "Lena Herzog",
-    "Maximilian Schröder",
-    "Sophia Neumann"
-  ],
-  poster: "/images/Altura.png",
-  watchlist: false
-} 
-*/
-// returns: id of the updated movie or null, if movie could not be updated
-async function updateBlog(blog) {
-  try {
-    let id = movie._id;
-    delete movie._id; // delete the _id from the object, because the _id cannot be updated
-    const collection = db.collection("movies");
-    const query = { _id: new ObjectId(id) }; // filter by id
-    const result = await collection.updateOne(query, { $set: movie });
-
-    if (result.matchedCount === 0) {
-      console.log("No movie with id " + id);
-      // TODO: errorhandling
-    } else {
-      console.log("Movie with id " + id + " has been updated.");
-      return id;
-    }
-  } catch (error) {
-    // TODO: errorhandling
-    console.log(error.message);
-  }
-  return null;
-}
-
 // delete blog by id
 // returns: id of the deleted blog or null, if blog could not be deleted
 async function deleteBlog(id) {
@@ -251,6 +211,27 @@ async function getReisearten() {
   return reisearten;
 }
 
+// Get reiseart by id
+async function getReiseart(id) {
+  let reiseart = null;
+  try {
+    const collection = db.collection("reisearten");
+    const query = { _id: new ObjectId(id) }; // filter by id
+    reiseart = await collection.findOne(query);
+
+    if (!reiseart) {
+      console.log("No reiseart with id " + id);
+      // TODO: errorhandling
+    } else {
+      reiseart._id = reiseart._id.toString(); // convert ObjectId to String
+    }
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return reiseart;
+}
+
 // Reisearten mit der ID abrufen
 async function getReiseartenByIdReiseart(ids) {
   let reisearten = [];
@@ -299,6 +280,61 @@ async function getNextIdFromReisearten() {
   return lastId + 1;
 }
 
+// delete reiseart by id
+// returns: id of the deleted reiseart or null, if reiseart could not be deleted
+async function deleteReiseart(id) {
+  try {
+    const collection = db.collection("reisearten");
+    const query = { _id: new ObjectId(id) }; // filter by id
+    const result = await collection.deleteOne(query);
+
+    if (result.deletedCount === 0) {
+      console.log("No reiseart with id " + id);
+    } else {
+      console.log("Reiseart with id " + id + " has been successfully deleted.");
+      return id;
+    }
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return null;
+}
+
+// update reiseart
+// Example reiseart object:
+/* 
+{
+  "_id": "67713d7b22ac09c3cd7b51db"
+  "reiseart": "Road Trips",
+  "idReiseart": 5,
+  "text": "Eine flexible Reiseform, bei der man mit dem Auto oder Van auf Entdeckungstour geht und verschiedene Orte besucht.",
+  "icon": "<i class=\"bi bi-car-front\"></i>"
+}
+*/
+// returns: id of the updated reiseart or null, if reisart could not be updated
+async function updateReiseart(reiseart) {
+  try {
+    let id = reiseart._id;
+    delete reiseart._id; // delete the _id from the object, because the _id cannot be updated
+    const collection = db.collection("reisearten");
+    const query = { _id: new ObjectId(id) }; // filter by id
+    const result = await collection.updateOne(query, { $set: reiseart });
+
+    if (result.matchedCount === 0) {
+      console.log("No reiseart with id " + id);
+      // TODO: errorhandling
+    } else {
+      console.log("Reiseart with id " + id + " has been updated.");
+      return id;
+    }
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return null;
+}
+
 
 
 // export all functions so that they can be used in other files
@@ -306,15 +342,17 @@ export default {
   getBlogs,
   getBlog,
   createBlog,
-  updateBlog,
   deleteBlog,
   getLaender,
   getLaenderByIdCountry,
   getReisearten,
+  getReiseart,
   getReiseartenByIdReiseart,
   getBlogsByQuery,
   createLand,
   getNextIdFromLaender,
   createReiseart,
   getNextIdFromReisearten,
+  deleteReiseart,
+  updateReiseart,
 };

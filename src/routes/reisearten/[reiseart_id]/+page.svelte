@@ -1,15 +1,27 @@
 <script>
     let { data } = $props();
+    let reiseart = data.reiseart;
 </script>
 
-<h1 class="mb-5">Neue Reiseart hinzufügen</h1>
+<h1 class="mb-5">Reiseart bearbeiten</h1>
 
-<form method="POST" action="?/create">
+<form method="POST" action="?/update">
+
+    
+    <input type="hidden" name="_id" value={reiseart._id} />
+    <input type="hidden" name="idReiseart" value={reiseart.idReiseart} />
+
 
     <div class="mb-3 row">
         <label for="" class="col-sm-2 col-form-label">Reiseart</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" name="reiseart" required />
+            <input
+                type="text"
+                class="form-control"
+                name="reiseart"
+                value={reiseart.reiseart}
+                required
+            />
         </div>
     </div>
     <div class="mb-3 row">
@@ -22,7 +34,7 @@
                 maxlength="150"
                 placeholder="Maximal 150 Zeichen"
                 required
-            ></textarea>
+            >{reiseart.text}</textarea>
         </div>
     </div>
     <div class="mb-3 row">
@@ -31,7 +43,6 @@
             <select class="form-control" name="icon" required>
                 <option value="" disabled selected>Bitte wähle ein Icon</option>
     
-                <!-- Reisen -->
                 <optgroup label="Reisen">
                     <option value='<i class="bi bi-airplane"></i>'>Flugzeug</option>
                     <option value='<i class="bi bi-backpack"></i>'>Rucksack</option>
@@ -44,7 +55,6 @@
                     <option value='<i class="bi bi-wifi"></i>'>WLAN</option>
                 </optgroup>
     
-                <!-- Fahrzeug -->
                 <optgroup label="Fahrzeug">
                     <option value='<i class="bi bi-car-front"></i>'>Auto</option>
                     <option value='<i class="bi bi-bus-front"></i>'>Bus</option>
@@ -55,7 +65,6 @@
                     <option value='<i class="bi bi-tools"></i>'>Werkzeuge</option>
                 </optgroup>
     
-                <!-- Outdoor -->
                 <optgroup label="Outdoor">
                     <option value='<i class="bi bi-bicycle"></i>'>Fahrrad</option>
                     <option value='<i class="bi bi-campfire"></i>'>Lagerfeuer</option>
@@ -69,7 +78,6 @@
                     <option value='<i class="bi bi-droplet"></i>'>Wassertropfen</option>
                 </optgroup>
     
-                <!-- Technologie -->
                 <optgroup label="Technologie">
                     <option value='<i class="bi bi-cpu"></i>'>Prozessor</option>
                     <option value='<i class="bi bi-display"></i>'>Bildschirm</option>
@@ -82,7 +90,6 @@
                     <option value='<i class="bi bi-wifi"></i>'>WLAN</option>
                 </optgroup>
     
-                <!-- Essen -->
                 <optgroup label="Essen">
                     <option value='<i class="bi bi-cup-straw"></i>'>Becher mit Strohhalm</option>
                     <option value='<i class="bi bi-egg-fried"></i>'>Spiegelei</option>
@@ -100,6 +107,6 @@
 
     <div class="d-flex flex-wrap gap-2 mt-5">
         <a class="btn btn-outline-danger" href="/reisearten" role="button">Abbrechen</a>
-        <button type="submit" class="btn btn-outline-success">Hinzufügen</button>
+        <button type="submit" class="btn btn-outline-success">Speichern</button>
     </div>
 </form>
