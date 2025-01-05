@@ -198,6 +198,32 @@ async function getLaenderByIdCountry(ids) {
   return countries;
 }
 
+// create land
+async function createLand(land) {
+  try {
+    const collection = db.collection("laender");
+    const result = await collection.insertOne(land);
+    return result.insertedId.toString(); // convert ObjectId to String
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return null;
+}
+
+async function getNextIdFromLaender() {
+  const lastLand = await db.collection("laender")
+    .find({})
+    .sort({ idCountry: -1 }) // Nach `idCountry` absteigend sortieren
+    .limit(1) // Nur das letzte Dokument abrufen
+    .toArray();
+
+  // Falls keine Einträge existieren, mit 1 starten
+  const lastId = lastLand.length > 0 ? lastLand[0].idCountry : 0;
+
+  return lastId + 1;
+}
+
 
 //////////////////////////////////////////
 // Reisearten
@@ -261,4 +287,6 @@ export default {
   getReisearten,
   getReiseartenByIdReiseart,
   getBlogsByQuery,
+  createLand,
+  getNextIdFromLaender,
 };

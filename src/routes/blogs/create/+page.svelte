@@ -1,6 +1,4 @@
 <script>
-    import { page } from "$app/stores";
-
     let { data } = $props();
 
     let laender = data.laender;
@@ -15,7 +13,7 @@
 
 </script>
 
-<h1>Neuer Blog hinzufügen</h1>
+<h1 class="mb-3">Neuer Blog hinzufügen</h1>
 
 <form method="POST" action="?/create">
     <div class="mb-3">
@@ -116,7 +114,7 @@
             {/each}
         </div>
     </div>
-    <div class="mt-5">
+    <div class="d-flex flex-wrap gap-2 mt-5">
         <a class="btn btn-outline-danger" href="/blogs" role="button"
             >Abbrechen</a
         >

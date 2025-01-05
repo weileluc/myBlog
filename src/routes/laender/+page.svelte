@@ -9,7 +9,7 @@
     <h1>Besuchte Länder</h1>
   </div>
   <div class="col-sm-2">
-    <a class="btn btn-outline-success" href="..." role="button"
+    <a class="btn btn-outline-success" href="/laender/create" role="button"
       >Land hinzufügen</a
     >
   </div>

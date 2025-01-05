@@ -29,7 +29,7 @@
         <div class="card-footer">
             <a class="link-dark link-underline-opacity-0" href="/blogs">
                 <small class="text-body-secondary"
-                    >{blogCount} Blogs in {land.country} gefunden</small
+                    >{blogCount} Blogs in {land.country} gefunden </small
                 >
             </a>
             <a class="icon-link" href="/blogs" aria-label="Go to blogs">
