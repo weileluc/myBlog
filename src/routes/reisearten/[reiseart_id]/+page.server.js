@@ -16,7 +16,7 @@ export const actions = {
 
         const updatedReiseart = {
             _id: data.get("_id"),
-            idReiseart: data.get("idReiseart"),
+            idReiseart: parseInt(data.get("idReiseart"), 10) || 0,
             reiseart: data.get("reiseart"),
             text: data.get("text"),
             icon: data.get("icon"),

@@ -136,6 +136,27 @@ async function getLaender() {
   return laender;
 }
 
+// Get Land by id
+async function getLand(id) {
+  let land = null;
+  try {
+    const collection = db.collection("laender");
+    const query = { _id: new ObjectId(id) }; // filter by id
+    land = await collection.findOne(query);
+
+    if (!land) {
+      console.log("No land with id " + id);
+      // TODO: errorhandling
+    } else {
+      land._id = land._id.toString(); // convert ObjectId to String
+    }
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return land;
+}
+
 // Laender mit der ID abrufen
 async function getLaenderByIdCountry(ids) {
   let countries = [];
@@ -179,9 +200,70 @@ async function getNextIdFromLaender() {
     .toArray();
 
   // Falls keine Einträge existieren, mit 1 starten
-  const lastId = lastLand.length > 0 ? lastLand[0].idCountry : 0;
+  const lastId = lastLand.length > 0 ? parseInt(lastLand[0].idCountry, 10) : 0;
 
   return lastId + 1;
+}
+
+// delete land by id
+// returns: id of the deleted land or null, if land could not be deleted
+async function deleteLand(id) {
+  try {
+    const collection = db.collection("laender");
+    const query = { _id: new ObjectId(id) }; // filter by id
+    const result = await collection.deleteOne(query);
+
+    if (result.deletedCount === 0) {
+      console.log("No land with id " + id);
+    } else {
+      console.log("Land with id " + id + " has been successfully deleted.");
+      return id;
+    }
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return null;
+}
+
+// update land
+// Example land object:
+/* 
+{
+  "_id": "67728d1722ac09c3cd7b51f1",
+  "idCountry": 8,
+  "country": "Kanada",
+  "continent": "Nord-Amerika",
+  "capital": "Ottawa",
+  "language": "Englisch und Französisch",
+  "currency": "Kanadische Dollar",
+  "security": "Hoch",
+  "localFood": "Maple-Sirup, Poutine",
+  "localBeverage": "Biere von Micro Breweries",
+  "price": "Teuer"
+}
+*/
+// returns: id of the updated land or null, if land could not be updated
+async function updateLand(land) {
+  try {
+    let id = land._id;
+    delete land._id; // delete the _id from the object, because the _id cannot be updated
+    const collection = db.collection("laender");
+    const query = { _id: new ObjectId(id) }; // filter by id
+    const result = await collection.updateOne(query, { $set: land });
+
+    if (result.matchedCount === 0) {
+      console.log("No land with id " + id);
+      // TODO: errorhandling
+    } else {
+      console.log("Land with id " + id + " has been updated.");
+      return id;
+    }
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return null;
 }
 
 
@@ -275,7 +357,7 @@ async function getNextIdFromReisearten() {
     .toArray();
 
   // Falls keine Einträge existieren, mit 1 starten
-  const lastId = lastReiseart.length > 0 ? lastReiseart[0].idReiseart : 0;
+  const lastId = lastReiseart.length > 0 ? parseInt(lastReiseart[0].idReiseart, 10) : 0;
 
   return lastId + 1;
 }
@@ -343,16 +425,19 @@ export default {
   getBlog,
   createBlog,
   deleteBlog,
+  getBlogsByQuery,
   getLaender,
+  getLand,
+  createLand,
+  deleteLand,
+  updateLand,
   getLaenderByIdCountry,
+  getNextIdFromLaender,
   getReisearten,
   getReiseart,
-  getReiseartenByIdReiseart,
-  getBlogsByQuery,
-  createLand,
-  getNextIdFromLaender,
   createReiseart,
-  getNextIdFromReisearten,
   deleteReiseart,
   updateReiseart,
+  getReiseartenByIdReiseart,
+  getNextIdFromReisearten,
 };
