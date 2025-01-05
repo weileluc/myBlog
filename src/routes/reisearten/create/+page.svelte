@@ -30,7 +30,7 @@
     }
 </script>
 
-<h1 class="mb-5">Neues Land hinzufügen</h1>
+<h1 class="mb-5">Neue Reiseart hinzufügen</h1>
 
 <form method="POST" action="?/create">
     <div class="mb-3 row">

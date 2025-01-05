@@ -13,7 +13,7 @@
 
 </script>
 
-<h1 class="mb-3">Neuer Blog hinzufügen</h1>
+<h1 class="mb-5">Neuer Blog hinzufügen</h1>
 
 <form method="POST" action="?/create">
     <div class="mb-3">

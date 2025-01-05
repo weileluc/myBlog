@@ -9,7 +9,7 @@
       <h1>Reisearten</h1>
     </div>
     <div class="col-sm-2">
-      <a class="btn btn-outline-success" href="..." role="button"
+      <a class="btn btn-outline-success" href="/reisearten/create" role="button"
         >Reiseart hinzufügen</a
       >
     </div>
