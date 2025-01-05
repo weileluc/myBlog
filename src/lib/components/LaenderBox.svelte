@@ -27,12 +27,12 @@
             </div>
         </div>
         <div class="card-footer">
-            <a class="link-dark link-underline-opacity-0" href="/blogs">
+            <a class="link-dark link-underline-opacity-0" href={`/blogs?country=${land.idCountry}`}>
                 <small class="text-body-secondary"
                     >{blogCount} Blogs in {land.country} gefunden </small
                 >
             </a>
-            <a class="icon-link" href="/blogs" aria-label="Go to blogs">
+            <a class="icon-link" href={`/blogs?country=${land.idCountry}`} aria-label="Go to blogs">
                 <i class="bi bi-arrow-right"></i>
             </a>
         </div>

@@ -20,7 +20,7 @@
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs custom-tabs">
             <li class="nav-item">
-                <a class="nav-link {$page.url.searchParams.get('year') === null ? 'active' : ''}" href="/blogs"
+                <a class="nav-link {(!$page.url.searchParams.get('year') && !$page.url.searchParams.get('country') && !$page.url.searchParams.get('reiseart')) ? 'active' : ''}" href="/blogs"
                     >Alle Beiträge</a
                 >
             </li>
@@ -41,7 +41,9 @@
                 href="?year=2024">Reise 2024</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/blogs">Eigenes Thema</a>
+                <a class="nav-link disabled {(!$page.url.searchParams.get('year') && ($page.url.searchParams.get('country') || $page.url.searchParams.get('reiseart'))) ? 'active' : ''}" href="/blogs">
+                    Filter
+                </a>
             </li>
         </ul>
     </div>

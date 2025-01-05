@@ -1,4 +1,4 @@
-<h1>Über mich</h1>
+<h1 class="mb-5">Über mich</h1>
 
 <div class="about-box">
     <p>
