@@ -1,141 +1,107 @@
 <script>
     let { data } = $props();
-
-    // Funktion zur Aktualisierung der Sicherheitsstufe
-    let securityValue = $state("Mittel bis Hoch");
-    const securityLabels = [
-        "Sehr Niedrig",
-        "Niedrig",
-        "Mittel bis Niedrig",
-        "Mittel",
-        "Mittel bis Hoch",
-        "Hoch",
-        "Sehr Hoch",
-    ];
-    function updateSecurity(value) {
-        securityValue = securityLabels[value - 1];
-    }
-
-    // Funktion zur Aktualisierung des Preisniveaus
-    let priceValue = $state("Günstig");
-    const priceLabels = [
-        "Sehr Günstig",
-        "Günstig",
-        "Mittel",
-        "Teuer",
-        "Sehr Teuer",
-    ];
-    function updatePrice(value) {
-        priceValue = priceLabels[value - 1];
-    }
 </script>
 
 <h1 class="mb-5">Neue Reiseart hinzufügen</h1>
 
 <form method="POST" action="?/create">
     <div class="mb-3 row">
-        <label for="" class="col-sm-2 col-form-label">Land</label>
+        <label for="" class="col-sm-2 col-form-label">Reiseart</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" name="country" required />
+            <input type="text" class="form-control" name="reiseart" required />
         </div>
     </div>
     <div class="mb-3 row">
-        <label for="" class="col-sm-2 col-form-label">Kontinent</label>
+        <label for="" class="col-sm-2 col-form-label">Beschreibung</label>
         <div class="col-sm-10">
-            <select class="form-control" name="continent">
-                <option value="" disabled selected
-                    >Bitte wählen Sie einen Kontinent</option
-                >
-                <option value="Afrika">Afrika</option>
-                <option value="Antarktis">Antarktis</option>
-                <option value="Asien">Asien</option>
-                <option value="Europa">Europa</option>
-                <option value="Nordamerika">Nordamerika</option>
-                <option value="Ozeanien">Ozeanien</option>
-                <option value="Südamerika">Südamerika</option>
+            <textarea
+                class="form-control"
+                rows="2"
+                name="text"
+                maxlength="150"
+                placeholder="Maximal 150 Zeichen"
+            ></textarea>
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="" class="col-sm-2 col-form-label">Icon</label>
+        <div class="col-sm-10">
+            <select class="form-control" name="icon">
+                <option value="" disabled selected>Bitte wähle ein Icon</option>
+    
+                <!-- Reisen -->
+                <optgroup label="Reisen">
+                    <option value='<i class="bi bi-airplane"></i>'>Flugzeug</option>
+                    <option value='<i class="bi bi-backpack"></i>'>Rucksack</option>
+                    <option value='<i class="bi bi-binoculars"></i>'>Fernglas</option>
+                    <option value='<i class="bi bi-geo-alt"></i>'>Reiseziel</option>
+                    <option value='<i class="bi bi-luggage"></i>'>Gepäck</option>
+                    <option value='<i class="bi bi-sun"></i>'>Sonne</option>
+                    <option value='<i class="bi bi-train-front"></i>'>Zug</option>
+                    <option value='<i class="bi bi-tree"></i>'>Baum</option>
+                    <option value='<i class="bi bi-wifi"></i>'>WLAN</option>
+                </optgroup>
+    
+                <!-- Fahrzeug -->
+                <optgroup label="Fahrzeug">
+                    <option value='<i class="bi bi-car-front"></i>'>Auto</option>
+                    <option value='<i class="bi bi-bus-front"></i>'>Bus</option>
+                    <option value='<i class="bi bi-train-front"></i>'>Zug</option>
+                    <option value='<i class="bi bi-ev-station"></i>'>Ladestation</option>
+                    <option value='<i class="bi bi-fuel-pump"></i>'>Tankstelle</option>
+                    <option value='<i class="bi bi-speedometer"></i>'>Tachometer</option>
+                    <option value='<i class="bi bi-tools"></i>'>Werkzeuge</option>
+                </optgroup>
+    
+                <!-- Outdoor -->
+                <optgroup label="Outdoor">
+                    <option value='<i class="bi bi-bicycle"></i>'>Fahrrad</option>
+                    <option value='<i class="bi bi-campfire"></i>'>Lagerfeuer</option>
+                    <option value='<i class="bi bi-cloud-drizzle"></i>'>Nieselregen</option>
+                    <option value='<i class="bi bi-cloud-sun"></i>'>Teilweise bewölkt</option>
+                    <option value='<i class="bi bi-mountain"></i>'>Berg</option>
+                    <option value='<i class="bi bi-snow"></i>'>Schnee</option>
+                    <option value='<i class="bi bi-tent"></i>'>Zelt</option>
+                    <option value='<i class="bi bi-umbrella"></i>'>Regenschirm</option>
+                    <option value='<i class="bi bi-water"></i>'>Wasser</option>
+                    <option value='<i class="bi bi-droplet"></i>'>Wassertropfen</option>
+                </optgroup>
+    
+                <!-- Technologie -->
+                <optgroup label="Technologie">
+                    <option value='<i class="bi bi-cpu"></i>'>Prozessor</option>
+                    <option value='<i class="bi bi-display"></i>'>Bildschirm</option>
+                    <option value='<i class="bi bi-keyboard"></i>'>Tastatur</option>
+                    <option value='<i class="bi bi-camera"></i>'>Kamera</option>
+                    <option value='<i class="bi bi-mouse"></i>'>Maus</option>
+                    <option value='<i class="bi bi-phone"></i>'>Telefon</option>
+                    <option value='<i class="bi bi-router"></i>'>Router</option>
+                    <option value='<i class="bi bi-smartwatch"></i>'>Smartwatch</option>
+                    <option value='<i class="bi bi-wifi"></i>'>WLAN</option>
+                </optgroup>
+    
+                <!-- Essen -->
+                <optgroup label="Essen">
+                    <option value='<i class="bi bi-cup-straw"></i>'>Becher mit Strohhalm</option>
+                    <option value='<i class="bi bi-egg-fried"></i>'>Spiegelei</option>
+                    <option value='<i class="bi bi-cup-hot"></i>'>Heißgetränk</option>
+                    <option value='<i class="bi bi-ice-cream"></i>'>Eiscreme</option>
+                    <option value='<i class="bi bi-pizza"></i>'>Pizza</option>
+                    <option value='<i class="bi bi-apple"></i>'>Apfel</option>
+                    <option value='<i class="bi bi-cake"></i>'>Kuchen</option>
+                    <option value='<i class="bi bi-burger"></i>'>Burger</option>
+                </optgroup>
             </select>
         </div>
     </div>
-    <div class="mb-3 row">
-        <label for="" class="col-sm-2 col-form-label">Hauptstadt</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="capital" />
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="" class="col-sm-2 col-form-label">Sprache</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="language" />
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="" class="col-sm-2 col-form-label">Währung</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="currency" />
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="" class="col-sm-2 col-form-label">Sicherheit</label>
-        <div class="col-sm-10">
-            <input
-                type="range"
-                class="form-range"
-                min="1"
-                max="7"
-                step="1"
-                value="5"
-                oninput={(e) => updateSecurity(e.target.value)}
-            />
-            <div class="d-flex justify-content-between">
-                <span class="text-muted">Sehr Niedrig</span>
-                <span class="text-muted">Mittel</span>
-                <span class="text-muted">Sehr Hoch</span>
-            </div>
-            <small>(Aktuelle Auswahl: <strong>{securityValue}</strong>)</small>
-            <input type="hidden" name="security" value={securityValue} />
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="" class="col-sm-2 col-form-label">Lokales Essen</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="localFood" />
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="" class="col-sm-2 col-form-label">Lokales Getränk</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" name="localBeverage" />
-        </div>
-    </div>
-    <div class="mb-3 row">
-        <label for="" class="col-sm-2 col-form-label">Preisniveau</label>
-        <div class="col-sm-10">
-            <input
-                type="range"
-                class="form-range"
-                min="1"
-                max="5"
-                step="1"
-                value="2"
-                oninput={(e) => updatePrice(e.target.value)}
-            />
-            <div class="d-flex justify-content-between">
-                <span class="text-muted">Sehr Günstig</span>
-                <span class="text-muted">Mittel</span>
-                <span class="text-muted">Sehr Teuer</span>
-            </div>
-            <small>(Aktuelle Auswahl: <strong>{priceValue}</strong>)</small>
-            <input type="hidden" name="price" value={priceValue} />
-        </div>
-    </div>
-
+    
 
     <div class="d-flex flex-wrap gap-2 mt-5">
-        <a class="btn btn-outline-danger" href="/laender" role="button"
+        <a class="btn btn-outline-danger" href="/reisearten" role="button"
             >Abbrechen</a
         >
         <button type="submit" class="btn btn-outline-success"
-            >Land Hinzufügen</button
+            >Reiseart Hinzufügen</button
         >
     </div>
 </form>

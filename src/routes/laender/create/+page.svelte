@@ -44,7 +44,7 @@
         <div class="col-sm-10">
             <select class="form-control" name="continent">
                 <option value="" disabled selected
-                    >Bitte wählen Sie einen Kontinent</option
+                    >Bitte wähle einen Kontinent</option
                 >
                 <option value="Afrika">Afrika</option>
                 <option value="Antarktis">Antarktis</option>

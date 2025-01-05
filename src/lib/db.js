@@ -273,6 +273,32 @@ async function getReiseartenByIdReiseart(ids) {
   return reisearten;
 }
 
+// create reiseart
+async function createReiseart(reiseart) {
+  try {
+    const collection = db.collection("reisearten");
+    const result = await collection.insertOne(reiseart);
+    return result.insertedId.toString(); // convert ObjectId to String
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return null;
+}
+
+async function getNextIdFromReisearten() {
+  const lastReiseart = await db.collection("reisearten")
+    .find({})
+    .sort({ idReiseart: -1 }) // Nach `idReiseart` absteigend sortieren
+    .limit(1) // Nur das letzte Dokument abrufen
+    .toArray();
+
+  // Falls keine Einträge existieren, mit 1 starten
+  const lastId = lastReiseart.length > 0 ? lastReiseart[0].idReiseart : 0;
+
+  return lastId + 1;
+}
+
 
 
 // export all functions so that they can be used in other files
@@ -289,4 +315,6 @@ export default {
   getBlogsByQuery,
   createLand,
   getNextIdFromLaender,
+  createReiseart,
+  getNextIdFromReisearten,
 };

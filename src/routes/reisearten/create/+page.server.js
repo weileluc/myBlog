@@ -5,24 +5,18 @@ export const actions = {
     create: async ({ request }) => {
         const data = await request.formData();
 
-        // Generiere die nächste `idCountry` basierend auf der letzten Position
-        const idCountry = await db.getNextIdFromLaender();
+        // Generiere die nächste `idReiseart` basierend auf der letzten Position
+        const idReiseart = await db.getNextIdFromReisearten();
 
-        let land = {
+        let reiseart = {
             _id: data.get("_id"),
-            idCountry: idCountry,
-            country: data.get("country"),
-            continent: data.get("continent"),
-            capital: data.get("capital"),
-            language: data.get("language"),
-            currency: data.get("currency"),
-            security: data.get("security"),
-            localFood: data.get("localFood"),
-            localBeverage: data.get("localBeverage"),
-            price: data.get("price"),
+            reiseart: data.get("reiseart"),
+            idReiseart: idReiseart,
+            text: data.get("text"),
+            icon: data.get("icon"),
         }
-        await db.createLand(land);
+        await db.createReiseart(reiseart);
 
-        throw redirect(303, "/laender");
+        throw redirect(303, "/reisearten");
     }
 }
