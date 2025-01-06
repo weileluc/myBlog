@@ -28,7 +28,7 @@
   $: loggedIn = $isAuthenticated;
 </script>
 
-<h1>Login</h1>
+<h1>Admin</h1>
 
 {#if loggedIn}
   <p>Willkommen im Admin-Bereich</p>

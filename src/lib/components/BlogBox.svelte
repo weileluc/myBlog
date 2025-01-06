@@ -1,4 +1,6 @@
 <script>
+    import { isAuthenticated } from '$lib/stores/auth';
+
     let { blog } = $props();
 </script>
 
@@ -23,7 +25,7 @@
                 <div class="col-auto" style="margin-right: 15px;">
                     <form method="POST" action="?/delete">
                         <input type="hidden" name="id" value={blog._id} />
-                        <button class="btn btn-outline-danger btn-sm">Löschen</button>
+                        <button class="btn btn-outline-danger btn-sm" disabled={!$isAuthenticated}>Löschen</button>
                     </form>
                 </div>
                 <!--<div class="col-auto">
@@ -36,6 +38,3 @@
         </div>
     </div>
 </div>
-
-<style>
-</style>
