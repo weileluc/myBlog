@@ -15,7 +15,7 @@
             <i class="bi bi-arrow-left me-2"></i> Zurück
         </button>
     
-        <div class="blog-meta d-flex align-items-center text-muted">
+        <div class="blog-meta d-flex flex-wrap align-items-center text-muted">
             <span class="me-3">
                 <i class="bi bi-person"></i> <strong>{blog.autor}</strong>
             </span>
