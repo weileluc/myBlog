@@ -7,6 +7,71 @@
   const latestBlogs = [...blogs].sort((a, b) => b.year - a.year).slice(0, 3);
 
   const visitedCountriesCount = countries.length;
+
+  // Chart
+  import { onMount } from "svelte";
+  import { Chart, registerables } from "chart.js";
+  Chart.register(...registerables);
+  let canvas;
+
+  // Zähle Anzahl der Blogs pro Jahr
+  function getBlogCountsByYear(blogs) {
+    const counts = {};
+    blogs.forEach((blog) => {
+      const year = blog.year;
+      counts[year] = (counts[year] || 0) + 1;
+    });
+
+    // Sortiere nach Jahr
+    const sortedYears = Object.keys(counts).sort((a, b) => a - b); // Numerische Sortierung
+    const sortedCounts = sortedYears.map((year) => counts[year]);
+
+    return { years: sortedYears, counts: sortedCounts };
+  }
+
+  const { years, counts } = getBlogCountsByYear(blogs);
+
+  onMount(() => {
+    new Chart(canvas, {
+      type: "line", // Line Chart für Timeline
+      data: {
+        labels: years, // Die Jahreswerte
+        datasets: [
+          {
+            label: "Anzahl Blogs",
+            data: counts,
+            tension: 0.3, // Glatte Linien
+            pointRadius: 5, // Punkte auf der Linie hervorheben
+            pointHoverRadius: 7,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            display: false,
+            position: "top",
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Jahr",
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Anzahl Blogs",
+            },
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  });
 </script>
 
 <h1 class="mb-5">Willkommen in meinem Blog</h1>
@@ -49,7 +114,7 @@
   <h2 class="mb-3">Meine Reisen</h2>
   <div class="row">
     <!-- Besuchte Länder -->
-    <div class="col-md-6">
+    <div class="col-md-6 mb-3">
       <a href="/laender" class="clickable-card text-decoration-none">
         <div class="card text-center">
           <div class="card-body">
@@ -61,7 +126,7 @@
     </div>
 
     <!-- Reisetage -->
-    <div class="col-md-6">
+    <div class="col-md-6 mb-3">
       <div class="card text-center">
         <div class="card-body">
           <h3 class="card-title">Anzahl Tage Backpacking</h3>
@@ -71,3 +136,10 @@
     </div>
   </div>
 </div>
+
+<!-- Blog Aktivität -->
+<h2 class="mb-3">Blog Aktivität</h2>
+<div class="card mb-5">
+  <canvas bind:this={canvas}></canvas>
+</div>
+
