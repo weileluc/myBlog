@@ -164,15 +164,25 @@ body {
     text-align: justify;
 }
 
-.blog-header {
-    font-weight: bold;
-}
-
 .blog-image {
     width: 300px;
     height: 100%;
     object-fit: cover;
     /* Zuschneiden des Bildes */
+}
+
+.blog-header {
+    padding: 15px 20px;
+    background-color: rgb(225, 235, 217);
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 
