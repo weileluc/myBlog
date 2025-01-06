@@ -67,6 +67,9 @@
               text: "Anzahl Blogs",
             },
             beginAtZero: true,
+            ticks: {
+              stepSize: 1, // Abstand zwischen den Werten auf der Y-Achse
+            },
           },
         },
       },
@@ -142,4 +145,3 @@
 <div class="card mb-5">
   <canvas bind:this={canvas}></canvas>
 </div>
-
