@@ -1,4 +1,6 @@
 <script>
+    import { isAuthenticated } from '$lib/stores/auth';
+
     let { data } = $props();
 
     let laender = data.laender;
@@ -118,7 +120,7 @@
         <a class="btn btn-outline-danger" href="/blogs" role="button"
             >Abbrechen</a
         >
-        <button type="submit" class="btn btn-outline-success" disabled={!isFormValid}
+        <button type="submit" class="btn btn-outline-success" disabled={!isFormValid || !$isAuthenticated}
             >Blog Hinzufügen</button
         >
     </div>

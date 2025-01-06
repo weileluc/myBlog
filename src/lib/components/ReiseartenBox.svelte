@@ -1,4 +1,6 @@
 <script>
+    import { isAuthenticated } from '$lib/stores/auth';
+
     let { reiseart, blogs } = $props();
 
     // Funktion um Blogs zu zählen, welche mit dem Tag Reiseart versehen sind
@@ -26,7 +28,7 @@
                             />
                             <button
                                 class="btn btn-outline-danger btn-sm px-2 py-1"
-                                aria-label="Löschen"
+                                aria-label="Löschen" disabled={!$isAuthenticated}
                             >
                                 <i class="bi bi-x"></i>
                             </button>

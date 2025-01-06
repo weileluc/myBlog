@@ -1,4 +1,6 @@
 <script>
+    import { isAuthenticated } from '$lib/stores/auth';
+
     let { data } = $props();
     let land = data.land;
 
@@ -149,7 +151,7 @@
         <a class="btn btn-outline-danger" href="/laender" role="button"
             >Abbrechen</a
         >
-        <button type="submit" class="btn btn-outline-success"
+        <button type="submit" class="btn btn-outline-success" disabled={!$isAuthenticated}
             >Speichern</button
         >
     </div>

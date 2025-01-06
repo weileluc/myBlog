@@ -1,4 +1,6 @@
 <script>
+    import { isAuthenticated } from '$lib/stores/auth';
+
     let { data } = $props();
 </script>
 
@@ -100,6 +102,6 @@
 
     <div class="d-flex flex-wrap gap-2 mt-5">
         <a class="btn btn-outline-danger" href="/reisearten" role="button">Abbrechen</a>
-        <button type="submit" class="btn btn-outline-success">Hinzufügen</button>
+        <button type="submit" class="btn btn-outline-success" disabled={!$isAuthenticated}>Hinzufügen</button>
     </div>
 </form>
