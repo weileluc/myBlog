@@ -15,12 +15,13 @@
             <div class="blogs-text-box">
                 <a class="link-dark link-underline-opacity-0" href="/blogs/{blog._id}">
                     <h2>{blog.title}</h2>
-                    <p>{blog.subtitle}</p>
+                    <p class="hide-on-sm">{blog.subtitle}</p>
                 </a>
             </div>
             <div class="row">
-                <div class="col">
-                    <p><b>Autor:</b> {blog.autor}</p>
+                <div class="col blogs-footer">
+                    <p><small class="text-muted"><b>Autor:</b> {blog.autor}  |  </small>
+                    <small class="text-muted"><b>Veröffentlicht:</b> {blog.year}</small></p>
                 </div>
                 <div class="col-auto" style="margin-right: 15px;">
                     <form method="POST" action="?/delete">

@@ -156,6 +156,34 @@ body {
     border-color: rgb(73, 80, 87);
 }
 
+@media (max-width: 992px) {
+    .hide-on-sm {
+        display: none !important;
+    }
+
+    .blogs-text-box {
+        height: 140px;
+        padding: 10px;
+    }
+
+    .blogs-box {
+        padding-right: 0px;
+    }
+
+    .title-image {
+        width: 100%;
+        height: 300px;
+        border-radius: 5px 5px 0px 0px;
+        object-fit: cover;
+        /* Zuschneiden des Bildes */
+    }
+
+    .blogs-footer {
+        margin-left: 10px;
+    }
+    
+}
+
 
 
 /* --------------- BLOG ----------------------------------------------------------------------------------- */
