@@ -12,5 +12,5 @@
         ich nehme dich mit auf meine Reise. Lass uns gemeinsam die Welt
         entdecken!
     </p>
-    <img src="/images/w3cr.jpg" alt="Reisebild von Luca" class="about-image" />
+    <img src="/images/about.jpg" alt="Reisebild von Luca" class="about-image" />
 </div>
