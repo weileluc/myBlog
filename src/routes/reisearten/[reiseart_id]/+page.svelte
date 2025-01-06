@@ -66,12 +66,10 @@
             
                 <optgroup label="Outdoor">
                     <option value='<i class="bi bi-bicycle"></i>' selected={reiseart.icon === '<i class="bi bi-bicycle"></i>'}>Fahrrad</option>
-                    <option value='<i class="bi bi-campfire"></i>' selected={reiseart.icon === '<i class="bi bi-campfire"></i>'}>Lagerfeuer</option>
                     <option value='<i class="bi bi-cloud-drizzle"></i>' selected={reiseart.icon === '<i class="bi bi-cloud-drizzle"></i>'}>Nieselregen</option>
                     <option value='<i class="bi bi-sun"></i>' selected={reiseart.icon === '<i class="bi bi-sun"></i>'}>Sonne</option>
                     <option value='<i class="bi bi-cloud-sun"></i>' selected={reiseart.icon === '<i class="bi bi-cloud-sun"></i>'}>Teilweise bewölkt</option>
                     <option value='<i class="bi bi-snow"></i>' selected={reiseart.icon === '<i class="bi bi-snow"></i>'}>Schnee</option>
-                    <option value='<i class="bi bi-tent"></i>' selected={reiseart.icon === '<i class="bi bi-tent"></i>'}>Zelt</option>
                     <option value='<i class="bi bi-umbrella"></i>' selected={reiseart.icon === '<i class="bi bi-umbrella"></i>'}>Regenschirm</option>
                     <option value='<i class="bi bi-water"></i>' selected={reiseart.icon === '<i class="bi bi-water"></i>'}>Wasser</option>
                     <option value='<i class="bi bi-droplet"></i>' selected={reiseart.icon === '<i class="bi bi-droplet"></i>'}>Wassertropfen</option>
@@ -93,11 +91,8 @@
                     <option value='<i class="bi bi-cup-straw"></i>' selected={reiseart.icon === '<i class="bi bi-cup-straw"></i>'}>Becher mit Strohhalm</option>
                     <option value='<i class="bi bi-egg-fried"></i>' selected={reiseart.icon === '<i class="bi bi-egg-fried"></i>'}>Spiegelei</option>
                     <option value='<i class="bi bi-cup-hot"></i>' selected={reiseart.icon === '<i class="bi bi-cup-hot"></i>'}>Heißgetränk</option>
-                    <option value='<i class="bi bi-ice-cream"></i>' selected={reiseart.icon === '<i class="bi bi-ice-cream"></i>'}>Eiscreme</option>
-                    <option value='<i class="bi bi-pizza"></i>' selected={reiseart.icon === '<i class="bi bi-pizza"></i>'}>Pizza</option>
                     <option value='<i class="bi bi-apple"></i>' selected={reiseart.icon === '<i class="bi bi-apple"></i>'}>Apfel</option>
                     <option value='<i class="bi bi-cake"></i>' selected={reiseart.icon === '<i class="bi bi-cake"></i>'}>Kuchen</option>
-                    <option value='<i class="bi bi-burger"></i>' selected={reiseart.icon === '<i class="bi bi-burger"></i>'}>Burger</option>
                 </optgroup>
                 
             </select>

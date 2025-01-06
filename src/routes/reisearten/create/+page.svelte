@@ -60,12 +60,10 @@
                 <!-- Outdoor -->
                 <optgroup label="Outdoor">
                     <option value='<i class="bi bi-bicycle"></i>'>Fahrrad</option>
-                    <option value='<i class="bi bi-campfire"></i>'>Lagerfeuer</option>
                     <option value='<i class="bi bi-cloud-drizzle"></i>'>Nieselregen</option>
                     <option value='<i class="bi bi-cloud-sun"></i>'>Teilweise bewölkt</option>
                     <option value='<i class="bi bi-mountain"></i>'>Berg</option>
                     <option value='<i class="bi bi-snow"></i>'>Schnee</option>
-                    <option value='<i class="bi bi-tent"></i>'>Zelt</option>
                     <option value='<i class="bi bi-umbrella"></i>'>Regenschirm</option>
                     <option value='<i class="bi bi-water"></i>'>Wasser</option>
                     <option value='<i class="bi bi-droplet"></i>'>Wassertropfen</option>
@@ -89,11 +87,8 @@
                     <option value='<i class="bi bi-cup-straw"></i>'>Becher mit Strohhalm</option>
                     <option value='<i class="bi bi-egg-fried"></i>'>Spiegelei</option>
                     <option value='<i class="bi bi-cup-hot"></i>'>Heißgetränk</option>
-                    <option value='<i class="bi bi-ice-cream"></i>'>Eiscreme</option>
-                    <option value='<i class="bi bi-pizza"></i>'>Pizza</option>
                     <option value='<i class="bi bi-apple"></i>'>Apfel</option>
                     <option value='<i class="bi bi-cake"></i>'>Kuchen</option>
-                    <option value='<i class="bi bi-burger"></i>'>Burger</option>
                 </optgroup>
             </select>
         </div>
