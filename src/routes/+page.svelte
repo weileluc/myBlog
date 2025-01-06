@@ -188,10 +188,10 @@
 <h2 class="mb-3">Blog Aktivität</h2>
 <div class="card mb-5">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-auto">
       <canvas bind:this={canvasLine}></canvas>
     </div>
-    <div class="col-md-6">
+    <div class="col-auto">
       <canvas bind:this={canvasPie}></canvas>
     </div>
   </div>
