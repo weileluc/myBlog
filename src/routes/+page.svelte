@@ -3,10 +3,11 @@
 
   const blogs = data.blogs || [];
   const countries = data.laender || [];
+  const countriesForCount = data.countries || [];
 
   const latestBlogs = [...blogs].sort((a, b) => b.year - a.year).slice(0, 3);
 
-  const visitedCountriesCount = countries.length;
+  const visitedCountriesCount = countriesForCount.length;
 
   // Chart
   // Line-Chart für Blog-Aktivität

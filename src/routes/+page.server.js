@@ -3,6 +3,7 @@ import db from "$lib/db.js"
 export async function load() {
     const blogs = await db.getBlogs();
     const laender = await db.getLaender();
+    const countries = await db.getLaender();
 
     const uniqueCountryIds = [...new Set(blogs.flatMap((blog) => blog.categoryCountry))];
 
@@ -18,5 +19,6 @@ export async function load() {
     return {
         blogs,
         laender: countriesWithBlogCounts, // Rückgabe der Länder mit Blog-Zählern
+        countries,
     };
 }
